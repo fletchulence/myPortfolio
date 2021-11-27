@@ -1,5 +1,4 @@
 import './App.css';
-import { BrowserRouter as Router } from 'react-router-dom';
 import { Routes, Route } from 'react-router-dom';
 
 //component imports
@@ -12,12 +11,10 @@ function App() {
       <p> Hello World !</p>
       <Header />
 
-      <Router>
         <Routes>
           <Route path='/' element={ <Home />}/>
           {/* <Route path='expertise' element={Home}/> */}
         </Routes>
-      </Router>
     </div>
   );
 }
