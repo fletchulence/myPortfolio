@@ -3,8 +3,8 @@
 import React from 'react';
 
 //Links to projects
-const Link1 = 'https://nasa-photo-of-the-day-seven-kappa.vercel.app/'; // nasa PhotoOfTheDay
-const Link2 = 'https://front-end-tau-ashen.vercel.app/'
+// const Link1 = 'https://nasa-photo-of-the-day-seven-kappa.vercel.app/'; // nasa PhotoOfTheDay
+// const Link2 = 'https://front-end-tau-ashen.vercel.app/'
 
 let ProjLinks = [
    'https://nasa-photo-of-the-day-seven-kappa.vercel.app/',
@@ -13,14 +13,14 @@ let ProjLinks = [
 
 ]
 
-let arr = [];
+// let arr = [];
 
 function Projects(props) {
-   const projectsArr = [
-      { Link1 },
-      { Link2 },
-      // { Link3 }
-   ]
+   // const projectsArr = [
+   //    { Link1 },
+   //    { Link2 },
+   //    // { Link3 }
+   // ]
    // console.log(projectsArr)
    // console.log(arr)
    return (
