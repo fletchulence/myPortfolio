@@ -1,5 +1,6 @@
 import './App.css';
 import { Routes, Route } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 //component imports
 import Home from './components/Home';
@@ -16,6 +17,10 @@ function App() {
         <Route path='/' element={ <Home /> }/>
         <Route path='/expertise' element={ < Projects /> }/>
       </Routes>
+
+      <div>
+        this should produce an error 
+      </div>
   
     </div>
 );
