@@ -9,15 +9,30 @@ import Projects from './components/Projects';
 
 function App() {
   return (
-    <div className="App">
-      <p> Hello Michelle !</p>
+    <div className='App'>
+      <h1> Welcome to my Website! </h1>
       <Header />
 
+      <div className='Bio'> {/* this will be all about the */}
+        <h1> Bio / About me </h1>
+        <ul>
+          <li> worked on a farm </li>
+          <li> degree in MechE </li>
+          <li> looking to be a fullStack Dev for the REST OF TIME</li>
+        </ul>
+      </div>
+
+      <div className='Projects'>
+        
+      </div>
+
+
       <Routes>
-        <Route path='/' element={ <Home /> }/>
+        {/* <Route path='/' element={ <Home /> }/> */}
         <Route path='/expertise' element={ < Projects /> }/>
       </Routes>
 
+       
       <div>
         this should produce an error 
       </div>
