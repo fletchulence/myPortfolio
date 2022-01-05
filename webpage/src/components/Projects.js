@@ -5,13 +5,13 @@ import { Link } from 'react-router-dom';
 
 // Links to projects
 const Link1 = 'https://nasa-photo-of-the-day-seven-kappa.vercel.app/'; // nasa PhotoOfTheDay
-const Link2 = 'https://front-end-tau-ashen.vercel.app/'
+const Link2 = 'https://front-end-chi-livid.vercel.app/'
 
 const ProjLinks = [
    // 'https://nasa-photo-of-the-day-seven-kappa.vercel.app/',
    // 'https://front-end-tau-ashen.vercel.app/',
-   <Link to={Link2}> hello </Link>,
-   <Link to={Link1}> Nasa Photo of the Day </Link>,
+   <a href={Link2} target='_blank' rel="noopener noreferrer"> Anywhere Fitness </a>,
+   <a href={Link1} target='_blank' rel="noopener noreferrer"> Nasa Photo of the Day </a>,
    // {Link2}
 ]
 
