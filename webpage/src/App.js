@@ -4,9 +4,15 @@ import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 //MUI imports
-import Container from '@mui/material/Container';
-import Box from '@mui/material/Box';
-import Card from '@mui/material/Card';
+import {
+  Typography,
+  Container,
+  Box,
+  Card,
+  CardContent,
+  Button,
+  Grid,
+} from '@mui/material';
 
 //component imports
 import Home from './components/Home';
@@ -15,7 +21,7 @@ import Projects from './components/Projects';
 import Foreign from './components/Foreign';
 
 //img imports
-import NYCIMG from './images/IMG_0480.jpg'
+import NYCIMG from './assets/images/IMG_0480.jpg'
 
 const StyledImage = styled.img`
   height: 800px;
@@ -27,8 +33,13 @@ function App() {
     <div className='App'>
     <Container maxWidth='md'>
       <h1> Welcome to my Website! </h1>
-      <Box sx={{ display:'flex', alignItems:'center', border:'1px solid black' }} color='text.primary'>
-            < Header />
+      <Box sx={{ 
+        display:'flex', 
+        alignItems:'center', 
+        border:'1px solid black', 
+        backgroundColor: "tertiary.main" 
+        }} color='red'>
+            < Header sx={{ display: 'flex', justifyContent: 'right' }} />
       </Box>
     </Container>   
 
@@ -45,7 +56,9 @@ function App() {
 
       <Card className='Projects'>
         <h1> Projects: </h1>
-        <p>here are some of my projects that i've worked on in the past:</p>
+        <CardContent>
+          <Typography variant="body2" color="text.primary">here are some of my projects that i've worked on in the past:</Typography>
+        </CardContent>
       </Card>
 
       <div>
@@ -53,7 +66,8 @@ function App() {
         <StyledImage src={NYCIMG} alt="NYC skyline"/>
       </div>
 
-      <Foreign/>
+      {/* <Foreign data={'data'} /> */}
+      {/* <Foreign /> */}
 
       {/* 
       //! what are the ROUTES that i'll need in general?
