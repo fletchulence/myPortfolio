@@ -1,12 +1,20 @@
 import './App.css';
 import { Routes, Route } from 'react-router-dom';
 import { Link } from 'react-router-dom';
-import styled from 'styled-components'
+import styled from 'styled-components';
+
+//MUI imports
+import Container from '@mui/material/Container';
+import Box from '@mui/material/Box';
+import Card from '@mui/material/Card';
 
 //component imports
 import Home from './components/Home';
 import Header from './components/Header';
 import Projects from './components/Projects';
+import Foreign from './components/Foreign';
+
+//img imports
 import NYCIMG from './images/IMG_0480.jpg'
 
 const StyledImage = styled.img`
@@ -17,29 +25,35 @@ const StyledImage = styled.img`
 function App() {
   return (
     <div className='App'>
+    <Container maxWidth='md'>
       <h1> Welcome to my Website! </h1>
-      
-      < Header />
+      <Box sx={{ display:'flex', alignItems:'center', border:'1px solid black' }} color='text.primary'>
+            < Header />
+      </Box>
+    </Container>   
 
-      <div className='Bio'> {/* this will be all about the */}
-        <h1> Bio / About me : </h1>
-        <ul>
-          <li> worked on a farm </li>
-          <li> degree in MechE </li>
-          <li> looking to be a fullStack Dev for the REST OF TIME</li>
-        </ul>
-      </div>
+    <Container maxWidth='sm'>
+      <h1> Bio / About me : </h1>
+      <Box sx={{ display: 'flex'}}>
+          <ul>
+            <li> worked on a farm </li>
+            <li> degree in MechE </li>
+            <li> looking to be a fullStack Dev for the REST OF TIME</li>
+          </ul>
+      </Box>
+    </Container>
 
-      <div className='Projects'>
+      <Card className='Projects'>
         <h1> Projects: </h1>
         <p>here are some of my projects that i've worked on in the past:</p>
-      </div>
+      </Card>
 
       <div>
         <h1> Hobbies: </h1>
         <StyledImage src={NYCIMG} alt="NYC skyline"/>
       </div>
 
+      <Foreign/>
 
       {/* 
       //! what are the ROUTES that i'll need in general?
