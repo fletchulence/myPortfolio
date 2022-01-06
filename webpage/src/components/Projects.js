@@ -12,7 +12,8 @@ import Foreign from './Foreign'
 
 //MUI IMPORTS:
 import {
-   Card 
+   Card,
+   Box 
 } from '@mui/material';
 
 
@@ -62,13 +63,16 @@ const ProjLinks = [
 
 function Projects() {
    return (
-      <Card variant="outlined">
+      <div>
+
+      <Card variant="outlined" >
          <h1> Projects </h1>
          <p>
             -- these are my projects -- <br/> 
             there will be a grid of projects here:
          </p>
-         {ProjCardInfo.map((e, idx)=>   
+         <Box sx={{display: 'flex', justifyContent:'space-around'}}>
+          {ProjCardInfo.map((e, idx)=>   
             <Foreign 
                key={idx}
                name={e.name}
@@ -79,8 +83,10 @@ function Projects() {
                bullet2={e.bullet2}
                bullet3={e.bullet3}
             > {e} </Foreign> 
-         )}
+          )}
+         </Box>
       </Card>
+      </div>
    )
 }
 

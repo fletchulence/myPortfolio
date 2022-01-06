@@ -55,9 +55,10 @@ function App() {
     </Container>
 
       <Card className='Projects'>
-        <h1> Projects: </h1>
+        {/* <h1> Projects: </h1> */}
         <CardContent>
           <Typography variant="body2" color="text.primary">here are some of my projects that i've worked on in the past:</Typography>
+          <Projects sx={{ border: '4px solid black'}}/>
         </CardContent>
       </Card>
 
@@ -66,16 +67,13 @@ function App() {
         <StyledImage src={NYCIMG} alt="NYC skyline"/>
       </div>
 
-      {/* <Foreign data={'data'} /> */}
-      {/* <Foreign /> */}
-
       {/* 
       //! what are the ROUTES that i'll need in general?
       //!    -- do i need routes anyway?
            */}
       <Routes>
         <Route path='/' element={ <Home /> }/>
-        <Route path='/expertise' element={ < Projects /> }/>
+        {/* <Route path='/expertise' element={ < Projects /> }/> */}
       </Routes>
 
        
