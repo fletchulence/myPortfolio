@@ -1,7 +1,9 @@
-import './App.css';
+// import './App.css';
 import { Routes, Route } from 'react-router-dom';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import styled from 'styled-components';
+import React from 'react';
+// import GlobalStyle from './assets/styles/GlobalStyle';
 
 //MUI imports
 import {
@@ -18,7 +20,7 @@ import {
 import Home from './components/Home';
 import Header from './components/Header';
 import Projects from './components/Projects';
-import Foreign from './components/Foreign';
+// import Foreign from './components/Foreign';
 
 //img imports
 import NYCIMG from './assets/images/IMG_0480.jpg'
@@ -30,16 +32,16 @@ const StyledImage = styled.img`
 
 function App() {
   return (
-    <div className='App'>
-    <Container maxWidth='md'>
-      <h1> Welcome to my Website! </h1>
+    <React.Fragment>
+    <Container maxWidth='xl' sx={{ height: '100%'}} >
       <Box sx={{ 
         display:'flex', 
         alignItems:'center', 
         border:'1px solid black', 
-        backgroundColor: "tertiary.main" 
-        }} color='red'>
-            < Header sx={{ display: 'flex', justifyContent: 'right' }} />
+        // backgroundColor: "tertiary.main" 
+      }}>
+          < Header sx={{ display: 'flex', justifyContent: 'right' }} />
+          <h2> Welcome to my Website! </h2>
       </Box>
     </Container>   
 
@@ -54,10 +56,10 @@ function App() {
       </Box>
     </Container>
 
-      <Card className='Projects'>
+      <Card id='Projects'>
         {/* <h1> Projects: </h1> */}
         <CardContent>
-          <Typography variant="body2" color="text.primary">here are some of my projects that i've worked on in the past:</Typography>
+          <Typography variant="body2" color="pallet.primary.main">here are some of my projects that i've worked on in the past:</Typography>
           <Projects sx={{ border: '4px solid black'}}/>
         </CardContent>
       </Card>
@@ -73,15 +75,10 @@ function App() {
            */}
       <Routes>
         <Route path='/' element={ <Home /> }/>
-        {/* <Route path='/expertise' element={ < Projects /> }/> */}
+        {/* <Route path='#Projects' element={ < Projects /> }/> */}
       </Routes>
-
-       
-      <div>
-        this should produce an error 
-      </div>
   
-    </div>
+    </React.Fragment>
 );
 }
 

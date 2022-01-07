@@ -7,13 +7,15 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import CssBaseline from '@mui/material/CssBaseline';
 import {ThemeProvider} from '@mui/material/styles';
 import App from './App';
-import theme from './themes';
+import theme from './assets/styles/themes';
+import GlobalStyle from './assets/styles/GlobalStyle'
 
 
 ReactDOM.render(
   <React.StrictMode>
+    <CssBaseline />
     <ThemeProvider theme={theme}>
-      <CssBaseline />
+      <GlobalStyle/>
       <Router>
         <App />
       </Router>

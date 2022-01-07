@@ -12,7 +12,7 @@ import Typography from '@mui/material/Typography';
 import { red } from '@mui/material/colors';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import ExitToAppIcon from '@mui/icons-material/ExitToApp';
-// import ExitToAppIcon from '@mui/icons-material/Home';
+// import LinkIcon from '@mui/icons-material/Link';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 
@@ -102,7 +102,7 @@ export default function ProjectOverviewCard(props) {
             <FavoriteIcon />
         </LikedProj>
 
-        <IconButton aria-label="share">
+        <IconButton aria-label="External Link">
           <ExitToAppIcon onClick={handleLinkClick} />
         </IconButton>
         <ExpandMore
