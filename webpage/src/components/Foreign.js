@@ -22,7 +22,7 @@ import MoreVertIcon from '@mui/icons-material/MoreVert';
 
 
 const ExpandMore = styled((props) => {
-   console.log(props)
+  //  console.log(props)
   const { expand, ...other } = props;
   return <IconButton {...other} />;
 })(({ theme, expand }) => ({
@@ -34,7 +34,7 @@ const ExpandMore = styled((props) => {
 }));
 
 const LikedProj = styled((props)=>{ 
-  console.log(props)
+  // console.log(props)
   const { like, ...other } = props
   return <IconButton {...other} />;
 })(({ theme, like }) => ({
@@ -45,7 +45,7 @@ const LikedProj = styled((props)=>{
 }));
 
 export default function ProjectOverviewCard(props) {
-   const { proj_name, role, linkFor, bullet1, bullet2, bullet3, icon_color } = props;
+   const { likes, proj_name, role, linkFor, bullet1, bullet2, bullet3, icon_color } = props;
   //  console.log(linkFor, bullet2, props.image);
   const [ expanded, setExpanded ] = React.useState(false);
   const [ liked, setLiked ] = React.useState(false)
@@ -60,7 +60,7 @@ export default function ProjectOverviewCard(props) {
 
   const handleLike = () =>{
     setLiked(!liked);
-    console.log('liked!')
+    console.log(likes)
   }
 
   const abbv = `${proj_name}`.split(' ').map(x => x[0]).join('');
