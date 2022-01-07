@@ -55,12 +55,14 @@ export default function ProjectOverviewCard(props) {
   };
 
   const handleLinkClick = () =>{
-     console.log('show me', linkFor)
+    window.open(linkFor, '_blank')
+    // target="_blank"
+    console.log('show me', linkFor)
   }
 
   const handleLike = () =>{
     setLiked(!liked);
-    console.log(likes)
+    // console.log(likes)
   }
 
   const abbv = `${proj_name}`.split(' ').map(x => x[0]).join('');
