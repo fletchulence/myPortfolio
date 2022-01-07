@@ -33,10 +33,21 @@ const ExpandMore = styled((props) => {
   }),
 }));
 
+const LikedProj = styled((props)=>{ 
+  console.log(props)
+  const { like, ...other } = props
+  return <IconButton {...other} />;
+})(({ theme, like }) => ({
+  color: !like ? 'gray' : red[400],
+  // transition: theme.transitions.create('color', {
+  //   transition:
+  // })
+}));
+
 export default function ProjectOverviewCard(props) {
-   const { name, role, linkFor, bullet1, bullet2, bullet3 } = props;
-   console.log(linkFor, bullet2, props.image);
-  const [expanded, setExpanded] = React.useState(false);
+   const { proj_name, role, linkFor, bullet1, bullet2, bullet3, icon_color } = props;
+  //  console.log(linkFor, bullet2, props.image);
+  const [ expanded, setExpanded ] = React.useState(false);
   const [ liked, setLiked ] = React.useState(false)
 
   const handleExpandClick = () => {
@@ -47,19 +58,26 @@ export default function ProjectOverviewCard(props) {
      console.log('show me', linkFor)
   }
 
+  const handleLike = () =>{
+    setLiked(!liked);
+    console.log('liked!')
+  }
+
+  const abbv = `${proj_name}`.split(' ').map(x => x[0]).join('');
+
 
   return (
-    <Card sx={{ maxWidth: 345 }}>
+    <Card sx={{ minWidth: 345, maxWidth: 345 , margin: '1%'}}>
       <CardHeader
         avatar={
-          <Avatar sx={{ bgcolor: red[400] }} aria-label="recipe"> PP </Avatar>
+          <Avatar sx={{ bgcolor: icon_color }} aria-label="recipe"> {abbv} </Avatar>
         }
         action={
           <IconButton aria-label="settings">
-            <MoreVertIcon /* //todo:make a modal to open for viewing more  */ />
+            <MoreVertIcon /* //todo:make a modal to open for viewing more options  */ />
           </IconButton>
         }
-        title={name}
+        title={proj_name}
         subheader={`Role: ${role}`}
       />
       <CardMedia
@@ -73,9 +91,15 @@ export default function ProjectOverviewCard(props) {
         <Typography variant="body2"> as;dklfj </Typography>
       </CardContent> */}
       <CardActions disableSpacing>
-        <IconButton aria-label="add to favorites">
-          <FavoriteIcon />
-        </IconButton>
+        <LikedProj 
+          like={liked} 
+          onClick={handleLike}
+          aria-checked={liked}
+          aria-label='add to favorites'
+        >
+            <FavoriteIcon />
+        </LikedProj>
+
         <IconButton aria-label="share">
           <ExitToAppIcon onClick={handleLinkClick} />
         </IconButton>

@@ -7,6 +7,7 @@ import { Link } from 'react-router-dom';
 import anywhere_thumb from '../assets/images/anywhere_dashboard1.png';
 import potluck_thumb from '../assets/images/potluck_home.png';
 import nasa_thumb from '../assets/images/nasa_home.png';
+import theme from './../themes'
 
 import Foreign from './Foreign'
 
@@ -19,31 +20,44 @@ import {
 
 const ProjCardInfo = [
    {
-      name: 'Anywhere Fitness',
+      proj_name: 'Anywhere Fitness',
       role: 'Back End Dev',
       image: anywhere_thumb,
       linkFor: 'https://front-end-chi-livid.vercel.app/',
       bullet1: 'This is still a Work in progress! ',
       bullet2: 'I was the only person assigned to the back end of this project. I am still working out kinks.',
       bullet3: 'Trying to add the classes to each person, so that they auto populate correctly. I will probably be working on this project for some time :)',
+      icon_color: '#ef5350',
    },
    {
-      name: 'Potluck Planner',
+      proj_name: 'Potluck Planner',
       role: 'Project Manager',
       image: potluck_thumb,
       linkFor: 'https://potluck1-front-end.vercel.app/',
       bullet1: 'worked to help the backend and frontend communicate',
       bullet2: 'fixed issues with styling',
       bullet3: 'Passed props where appropriate',
+      icon_color: '#ef5350',
    },
    {
-      name: 'Nasa Photo of the Day',
+      proj_name: 'Nasa Photo of the Day',
       role: 'Creator',
       image: nasa_thumb,
       linkFor: 'https://nasa-photo-of-the-day-seven-kappa.vercel.app/',
       bullet1: 'went above and beyond on this project -- doesnt look too complex, but this was the first time that i actually worked with pulling from an API. I am very happy with this product.',
       bullet2: 'Learned to make a calendar output with a form. This was very advanced for the time i started doing it, but i started understanding more and more as time went on.',
       bullet3: 'You will notice that nothing in this project is strictly written. All is populated. Fully modular.',
+      icon_color: '#ef5350',
+   },
+   {
+      proj_name: 'Nasa Photo of the Day',
+      role: 'Creator',
+      image: nasa_thumb,
+      linkFor: 'https://nasa-photo-of-the-day-seven-kappa.vercel.app/',
+      bullet1: 'went above and beyond on this project -- doesnt look too complex, but this was the first time that i actually worked with pulling from an API. I am very happy with this product.',
+      bullet2: 'Learned to make a calendar output with a form. This was very advanced for the time i started doing it, but i started understanding more and more as time went on.',
+      bullet3: 'You will notice that nothing in this project is strictly written. All is populated. Fully modular.',
+      icon_color: theme.palette.primary.main,
    },
 ]
 
@@ -65,23 +79,24 @@ function Projects() {
    return (
       <div>
 
-      <Card variant="outlined" >
+      <Card variant="outlined" sx={{ display: 'flex', flexFlow: 'row wrap', justifyContent:'center'}} >
          <h1> Projects </h1>
          <p>
             -- these are my projects -- <br/> 
             there will be a grid of projects here:
          </p>
-         <Box sx={{display: 'flex', justifyContent:'space-around'}}>
+         <Box sx={{ display: 'flex', flexFlow: 'row wrap', justifyContent:'space-between', width: '80%', alignSelf: 'center'}}>
           {ProjCardInfo.map((e, idx)=>   
             <Foreign 
                key={idx}
-               name={e.name}
+               proj_name={e.proj_name}
                role={e.role}
                linkFor={e.linkFor}
                image={e.image}
                bullet1={e.bullet1}
                bullet2={e.bullet2}
                bullet3={e.bullet3}
+               icon_color={e.icon_color}
             > {e} </Foreign> 
           )}
          </Box>
