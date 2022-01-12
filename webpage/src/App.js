@@ -38,7 +38,7 @@ function App() {
         display:'flex', 
         alignItems:'center', 
         border:'1px solid black', 
-        // backgroundColor: "tertiary.main" 
+        backgroundColor: "theme.primary.main" 
       }}>
           < Header sx={{ display: 'flex', justifyContent: 'right' }} />
           <h2> Welcome to my Website! </h2>
@@ -59,7 +59,7 @@ function App() {
       <Card id='Projects'>
         {/* <h1> Projects: </h1> */}
         <CardContent>
-          <Typography variant="body2" color="pallet.primary.main">here are some of my projects that i've worked on in the past:</Typography>
+          <Typography variant="body2" color="theme.pallet.primary.main">here are some of my projects that i've worked on in the past:</Typography>
           <Projects sx={{ border: '4px solid black'}}/>
         </CardContent>
       </Card>

@@ -4,7 +4,7 @@ import theme from "./themes";
 const GlobalStyle = createGlobalStyle`
    body{
       background-color: ${theme.palette.primary.main};
-      color: ${theme.palette.secondary.light};
+      color: ${theme.palette.primary.text};
    }
 
    h1,
