@@ -5,9 +5,9 @@ import reportWebVitals from './reportWebVitals';
 
 import { BrowserRouter as Router } from 'react-router-dom';
 import CssBaseline from '@mui/material/CssBaseline';
-import {ThemeProvider} from '@mui/material/styles';
-import App from './App';
+import { ThemeProvider } from '@mui/material/styles';
 import theme from './assets/styles/themes';
+import App from './App';
 import GlobalStyle from './assets/styles/GlobalStyle'
 
 

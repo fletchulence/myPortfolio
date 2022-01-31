@@ -12,17 +12,12 @@ import Typography from '@mui/material/Typography';
 import { red } from '@mui/material/colors';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import ExitToAppIcon from '@mui/icons-material/ExitToApp';
-// import LinkIcon from '@mui/icons-material/Link';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
-
-// import potluck_thumb from '../assets/images/potluck_home.png';
-// import anywhere_thumb from '../assets/images/anywhere_dashboard1.png';
-// import nasa_thumb from '../assets/images/nasa_home.png';
-
+// own imports
+import theme from '../assets/styles/themes';
 
 const ExpandMore = styled((props) => {
-  //  console.log(props)
   const { expand, ...other } = props;
   return <IconButton {...other} />;
 })(({ theme, expand }) => ({
@@ -33,8 +28,7 @@ const ExpandMore = styled((props) => {
   }),
 }));
 
-const LikedProj = styled((props)=>{ 
-  // console.log(props)
+const LikedProj = styled((props) => {
   const { like, ...other } = props
   return <IconButton {...other} />;
 })(({ theme, like }) => ({
@@ -45,31 +39,46 @@ const LikedProj = styled((props)=>{
 }));
 
 export default function ProjectOverviewCard(props) {
-   const { likes, proj_name, role, linkFor, bullet1, bullet2, bullet3, icon_color } = props;
+  const { 
+    likes, 
+    proj_name, 
+    role, 
+    linkFor, 
+    bullet1, 
+    bullet2, 
+    bullet3, 
+    icon_color,
+    image
+  } = props;
   //  console.log(linkFor, bullet2, props.image);
-  const [ expanded, setExpanded ] = React.useState(false);
-  const [ liked, setLiked ] = React.useState(false)
+  const [expanded, setExpanded] = React.useState(false);
+  const [liked, setLiked] = React.useState(false)
 
   const handleExpandClick = () => {
     setExpanded(!expanded);
   };
 
-  const handleLinkClick = () =>{
+  const handleLinkClick = () => {
     window.open(linkFor, '_blank')
-    // target="_blank"
-    console.log('show me', linkFor)
+    // console.log('show me', linkFor)
   }
 
-  const handleLike = () =>{
+  const handleLike = () => {
     setLiked(!liked);
-    // console.log(likes)
   }
 
   const abbv = `${proj_name}`.split(' ').map(x => x[0]).join('');
 
 
   return (
-    <Card sx={{ minWidth: 345, maxWidth: 345 , margin: '1%'}}>
+    <Card 
+      sx={{ 
+        minWidth: 345, 
+        maxWidth: 345, 
+        margin: '1%', 
+        color: theme.palette.primary.text,
+        backgroundColor: theme.palette.primary.light 
+      }}>
       <CardHeader
         avatar={
           <Avatar sx={{ bgcolor: icon_color }} aria-label="recipe"> {abbv} </Avatar>
@@ -85,7 +94,7 @@ export default function ProjectOverviewCard(props) {
       <CardMedia
         component="img"
         height="200"
-        image={props.image}
+        image={image}
         alt="Potluck Project"
       />
       {/* <CardContent>
@@ -93,13 +102,13 @@ export default function ProjectOverviewCard(props) {
         <Typography variant="body2"> as;dklfj </Typography>
       </CardContent> */}
       <CardActions disableSpacing>
-        <LikedProj 
-          like={liked} 
+        <LikedProj
+          like={liked}
           onClick={handleLike}
           aria-checked={liked}
           aria-label='add to favorites'
         >
-            <FavoriteIcon />
+          <FavoriteIcon />
         </LikedProj>
 
         <IconButton aria-label="External Link">
@@ -118,7 +127,7 @@ export default function ProjectOverviewCard(props) {
         <CardContent>
           <Typography paragraph>Method:</Typography>
           <Typography paragraph>
-             {bullet1}
+            {bullet1}
           </Typography>
           <Typography paragraph>
             {bullet2}
@@ -126,9 +135,6 @@ export default function ProjectOverviewCard(props) {
           <Typography paragraph>
             {bullet3}
           </Typography>
-          {/* <Typography>
-            Set aside off of the heat to let rest for 10 minutes, and then serve.
-          </Typography> */}
         </CardContent>
       </Collapse>
     </Card>
