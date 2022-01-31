@@ -5,15 +5,17 @@ import reportWebVitals from './reportWebVitals';
 
 import { BrowserRouter as Router } from 'react-router-dom';
 import CssBaseline from '@mui/material/CssBaseline';
-import {ThemeProvider} from '@mui/material/styles';
+import { ThemeProvider } from '@mui/material/styles';
+import theme from './assets/styles/themes';
 import App from './App';
-import theme from './themes';
+import GlobalStyle from './assets/styles/GlobalStyle'
 
 
 ReactDOM.render(
   <React.StrictMode>
+    <CssBaseline />
     <ThemeProvider theme={theme}>
-      <CssBaseline />
+      <GlobalStyle/>
       <Router>
         <App />
       </Router>

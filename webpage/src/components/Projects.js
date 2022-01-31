@@ -7,15 +7,12 @@ import { Link } from 'react-router-dom';
 import anywhere_thumb from '../assets/images/anywhere_dashboard1.png';
 import potluck_thumb from '../assets/images/potluck_home.png';
 import nasa_thumb from '../assets/images/nasa_home.png';
-import theme from './../themes'
+import theme from './../assets/styles/themes'
 
 import Foreign from './Foreign'
 
 //MUI IMPORTS:
-import {
-   Card,
-   Box 
-} from '@mui/material';
+import { Card, Box } from '@mui/material';
 
 
 const ProjCardInfo = [
@@ -47,7 +44,7 @@ const ProjCardInfo = [
       bullet1: 'went above and beyond on this project -- doesnt look too complex, but this was the first time that i actually worked with pulling from an API. I am very happy with this product.',
       bullet2: 'Learned to make a calendar output with a form. This was very advanced for the time i started doing it, but i started understanding more and more as time went on.',
       bullet3: 'You will notice that nothing in this project is strictly written. All is populated. Fully modular.',
-      icon_color: '#ef5350',
+      icon_color: theme.palette.primary.borders,
    },
    {
       proj_name: 'Nasa Photo of the Day',
@@ -57,35 +54,49 @@ const ProjCardInfo = [
       bullet1: 'went above and beyond on this project -- doesnt look too complex, but this was the first time that i actually worked with pulling from an API. I am very happy with this product.',
       bullet2: 'Learned to make a calendar output with a form. This was very advanced for the time i started doing it, but i started understanding more and more as time went on.',
       bullet3: 'You will notice that nothing in this project is strictly written. All is populated. Fully modular.',
-      icon_color: theme.palette.primary.main,
+      icon_color: theme.palette.tertiary.text,
    },
 ]
 
 // Links to projects
-const Link1 = 'https://nasa-photo-of-the-day-seven-kappa.vercel.app/'; // nasa PhotoOfTheDay
-const Link2 = 'https://front-end-chi-livid.vercel.app/'
+// const Link1 = 'https://nasa-photo-of-the-day-seven-kappa.vercel.app/'; // nasa PhotoOfTheDay
+// const Link2 = 'https://front-end-chi-livid.vercel.app/'
 
-const ProjLinks = [
-   // 'https://nasa-photo-of-the-day-seven-kappa.vercel.app/',
-   // 'https://front-end-tau-ashen.vercel.app/',
-   <a href={ Link2 } target='_blank' rel="noopener noreferrer"> Anywhere Fitness </a>,
-   <a href={ Link1 } target='_blank' rel="noopener noreferrer"> Nasa Photo of the Day </a>,
-   // <a href={ /* Link1 */ } target='_blank' rel="noopener noreferrer"> Nasa Photo of the Day </a>,
-]
+// const ProjLinks = [
+//    // 'https://nasa-photo-of-the-day-seven-kappa.vercel.app/',
+//    // 'https://front-end-tau-ashen.vercel.app/',
+//    <a href={ Link2 } target='_blank' rel="noopener noreferrer"> Anywhere Fitness </a>,
+//    <a href={ Link1 } target='_blank' rel="noopener noreferrer"> Nasa Photo of the Day </a>,
+//    // <a href={ /* Link1 */ } target='_blank' rel="noopener noreferrer"> Nasa Photo of the Day </a>,
+// ]
 
 // let arr = [];
 
 function Projects() {
    return (
-      <div>
-
-      <Card variant="outlined" sx={{ display: 'flex', flexFlow: 'row wrap', justifyContent:'center'}} >
-         <h1> Projects </h1>
+      <Card 
+         variant="outlined" 
+         sx={{ 
+            display: 'flex', 
+            flexFlow: 'row wrap', 
+            justifyContent:'center',
+            outline: theme.palette.primary.main.text,
+            backgroundColor: theme.palette.primary.main,
+         }} >
+         {/* <h1> Projects </h1>
          <p>
             -- these are my projects -- <br/> 
             there will be a grid of projects here:
-         </p>
-         <Box sx={{ display: 'flex', flexFlow: 'row wrap', justifyContent:'space-between', width: '80%', alignSelf: 'center'}}>
+         </p> */}
+         <Box sx={{ 
+            display: 'flex', 
+            flexFlow: 'row wrap', 
+            justifyContent:'space-between', 
+            width: '80%', 
+            alignSelf: 'center',
+            color: theme.palette.primary.light,
+               backgroundColor: theme.palette.primary.main
+            }}>
           {ProjCardInfo.map((e, idx)=>   
             <Foreign 
                key={idx}
@@ -101,7 +112,6 @@ function Projects() {
           )}
          </Box>
       </Card>
-      </div>
    )
 }
 
