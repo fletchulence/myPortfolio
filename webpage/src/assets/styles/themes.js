@@ -15,7 +15,7 @@ const theme = createTheme({
     },
     tertiary: {
       main: orange[200],
-      text: orange[50],
+      text: orange[100],
     },
     error: {
       main: red.A400,

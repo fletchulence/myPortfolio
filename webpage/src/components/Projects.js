@@ -83,11 +83,6 @@ function Projects() {
             outline: theme.palette.primary.main.text,
             backgroundColor: theme.palette.primary.main,
          }} >
-         {/* <h1> Projects </h1>
-         <p>
-            -- these are my projects -- <br/> 
-            there will be a grid of projects here:
-         </p> */}
          <Box sx={{ 
             display: 'flex', 
             flexFlow: 'row wrap', 
