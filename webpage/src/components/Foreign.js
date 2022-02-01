@@ -69,7 +69,6 @@ export default function ProjectOverviewCard(props) {
 
   const abbv = `${proj_name}`.split(' ').map(x => x[0]).join('');
 
-
   return (
     <Card 
       sx={{ 
@@ -81,7 +80,7 @@ export default function ProjectOverviewCard(props) {
       }}>
       <CardHeader
         avatar={
-          <Avatar sx={{ bgcolor: icon_color }} aria-label="recipe"> {abbv} </Avatar>
+          <Avatar sx={{ bgcolor: icon_color }} aria-label="recipe"> {abbv.slice(0, 2)} </Avatar>
         }
         action={
           <IconButton aria-label="settings">
@@ -97,10 +96,6 @@ export default function ProjectOverviewCard(props) {
         image={image}
         alt="Potluck Project"
       />
-      {/* <CardContent>
-        <Typography variant="body2" color="text.secondary"></Typography>
-        <Typography variant="body2"> as;dklfj </Typography>
-      </CardContent> */}
       <CardActions disableSpacing>
         <LikedProj
           like={liked}

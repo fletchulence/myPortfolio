@@ -14,7 +14,7 @@ import Home from './components/Home';
 import Header from './components/Header';
 import Projects from './components/Projects';
 
-//img imports
+// img imports
 import NYCIMG from './assets/images/IMG_0480.jpg'
 
 const StyledImage = styled.img`

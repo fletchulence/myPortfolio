@@ -1,12 +1,11 @@
-//TODO:  STILL NEED TO INSTALL MUI ?
-
 import React from 'react';
-import { Link } from 'react-router-dom';
 
 // image imports
 import anywhere_thumb from '../assets/images/anywhere_dashboard1.png';
 import potluck_thumb from '../assets/images/potluck_home.png';
 import nasa_thumb from '../assets/images/nasa_home.png';
+
+// importing theme -- when can i stop doing this??
 import theme from './../assets/styles/themes'
 
 import Foreign from './Foreign'
