@@ -3,7 +3,7 @@ import theme from "./themes";
 
 const GlobalStyle = createGlobalStyle`
    body{
-      background-color: ${theme.palette.primary.main};
+      background-color: ${theme.palette.primary.light};
       color: ${theme.palette.tertiary.text};
    }
 

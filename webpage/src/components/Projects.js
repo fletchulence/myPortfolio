@@ -13,7 +13,7 @@ import Foreign from './Foreign'
 //MUI IMPORTS:
 import { Card, Box } from '@mui/material';
 
-
+//todo: add alt txt for the imgs
 const ProjCardInfo = [
    {
       proj_name: 'Anywhere Fitness',
@@ -80,7 +80,7 @@ function Projects() {
             flexFlow: 'row wrap',
             justifyContent: 'center',
             outline: theme.palette.primary.main.text,
-            backgroundColor: theme.palette.primary.main,
+            backgroundColor: theme.palette.primary.light,
          }} >
          <Box sx={{
             display: 'flex',
@@ -88,8 +88,6 @@ function Projects() {
             justifyContent: 'space-between',
             width: '80%',
             alignSelf: 'center',
-            color: theme.palette.primary.light,
-            backgroundColor: theme.palette.primary.main
          }}>
             {ProjCardInfo.map((e, idx) =>
                <Foreign
