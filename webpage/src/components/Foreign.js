@@ -39,18 +39,17 @@ const LikedProj = styled((props) => {
 }));
 
 export default function ProjectOverviewCard(props) {
-  const { 
-    likes, 
-    proj_name, 
-    role, 
-    linkFor, 
-    bullet1, 
-    bullet2, 
-    bullet3, 
-    icon_color,
+  const {
+    likes,
+    proj_name,
+    role,
+    linkFor,
+    bullet1,
+    bullet2,
+    bullet3,
+    icon_color, // unused for the purposes of styling -- might change later
     image
   } = props;
-  //  console.log(linkFor, bullet2, props.image);
   const [expanded, setExpanded] = React.useState(false);
   const [liked, setLiked] = React.useState(false)
 
@@ -70,17 +69,17 @@ export default function ProjectOverviewCard(props) {
   const abbv = `${proj_name}`.split(' ').map(x => x[0]).join('');
 
   return (
-    <Card 
-      sx={{ 
-        minWidth: 345, 
-        maxWidth: 345, 
-        margin: '1%', 
-        color: theme.palette.primary.text,
-        backgroundColor: theme.palette.primary.light 
+    <Card
+      sx={{
+        minWidth: 345,
+        maxWidth: 1345,
+        margin: '1%',
+        color: theme.palette.primary.dark,
+        backgroundColor: theme.palette.tertiary.text
       }}>
       <CardHeader
         avatar={
-          <Avatar sx={{ bgcolor: icon_color }} aria-label="recipe"> {abbv.slice(0, 2)} </Avatar>
+          <Avatar sx={{ bgcolor: theme.palette.secondary.light }} aria-label="recipe"> {abbv.slice(0, 2)} </Avatar>
         }
         action={
           <IconButton aria-label="settings">
@@ -121,15 +120,9 @@ export default function ProjectOverviewCard(props) {
       <Collapse in={expanded} timeout="auto" unmountOnExit>
         <CardContent>
           <Typography paragraph>Method:</Typography>
-          <Typography paragraph>
-            {bullet1}
-          </Typography>
-          <Typography paragraph>
-            {bullet2}
-          </Typography>
-          <Typography paragraph>
-            {bullet3}
-          </Typography>
+          <Typography paragraph> {bullet1} </Typography>
+          <Typography paragraph> {bullet2} </Typography>
+          <Typography paragraph> {bullet3} </Typography>
         </CardContent>
       </Collapse>
     </Card>

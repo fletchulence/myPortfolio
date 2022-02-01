@@ -73,41 +73,40 @@ const ProjCardInfo = [
 
 function Projects() {
    return (
-      <Card 
-         variant="outlined" 
-         sx={{ 
-            display: 'flex', 
-            flexFlow: 'row wrap', 
-            justifyContent:'center',
+      <Card
+         variant="outlined"
+         sx={{
+            display: 'flex',
+            flexFlow: 'row wrap',
+            justifyContent: 'center',
             outline: theme.palette.primary.main.text,
             backgroundColor: theme.palette.primary.main,
          }} >
-         <Box sx={{ 
-            display: 'flex', 
-            flexFlow: 'row wrap', 
-            justifyContent:'space-between', 
-            width: '80%', 
+         <Box sx={{
+            display: 'flex',
+            flexFlow: 'row wrap',
+            justifyContent: 'space-between',
+            width: '80%',
             alignSelf: 'center',
             color: theme.palette.primary.light,
-               backgroundColor: theme.palette.primary.main
-            }}>
-          {ProjCardInfo.map((e, idx)=>   
-            <Foreign 
-               key={idx}
-               proj_name={e.proj_name}
-               role={e.role}
-               linkFor={e.linkFor}
-               image={e.image}
-               bullet1={e.bullet1}
-               bullet2={e.bullet2}
-               bullet3={e.bullet3}
-               icon_color={e.icon_color}
-            > {e} </Foreign> 
-          )}
+            backgroundColor: theme.palette.primary.main
+         }}>
+            {ProjCardInfo.map((e, idx) =>
+               <Foreign
+                  key={idx}
+                  proj_name={e.proj_name}
+                  role={e.role}
+                  linkFor={e.linkFor}
+                  image={e.image}
+                  bullet1={e.bullet1}
+                  bullet2={e.bullet2}
+                  bullet3={e.bullet3}
+                  icon_color={e.icon_color}
+               > {e} </Foreign>
+            )}
          </Box>
       </Card>
    )
 }
-
 
 export default Projects;
