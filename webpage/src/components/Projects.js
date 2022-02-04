@@ -8,9 +8,9 @@ import nasa_thumb from '../assets/images/nasa_home.png';
 // importing theme -- when can i stop doing this??
 import theme from './../assets/styles/themes'
 
-import Foreign from './Foreign'
+import ProjCard from './ProjectCard'
 
-//MUI IMPORTS:
+// MUI IMPORTS:
 import { Card, Box } from '@mui/material';
 
 //todo: add alt txt for the imgs
@@ -90,7 +90,7 @@ function Projects() {
             alignSelf: 'center',
          }}>
             {ProjCardInfo.map((e, idx) =>
-               <Foreign
+               <ProjCard
                   key={idx}
                   proj_name={e.proj_name}
                   role={e.role}
@@ -100,7 +100,7 @@ function Projects() {
                   bullet2={e.bullet2}
                   bullet3={e.bullet3}
                   icon_color={e.icon_color}
-               > {e} </Foreign>
+               > {e} </ProjCard>
             )}
          </Box>
       </Card>

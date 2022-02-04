@@ -1,3 +1,4 @@
+// import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import styled from 'styled-components';
 import React from 'react';
@@ -12,6 +13,7 @@ import {
 // component imports
 import Home from './components/Home';
 import Header from './components/Header';
+// import './background.css'
 import Projects from './components/Projects';
 
 // img imports
@@ -24,7 +26,7 @@ const StyledImage = styled.img`
 
 function App() {
   return (
-    <React.Fragment>
+    <>
       <Container maxWidth='xl' sx={{ height: '100%' }} >
         <Box sx={{
           display: 'flex',
@@ -33,7 +35,7 @@ function App() {
           // borderColor: theme.pallet.primary.borders, 
           backgroundColor: theme.palette.primary.light,
         }}>
-        < Header sx={{ display: 'flex', justifyContent: 'right' }} />
+          < Header sx={{ display: 'flex', justifyContent: 'right' }} />
           <h2> Welcome to my Website! </h2>
         </Box>
       </Container>
@@ -68,7 +70,7 @@ function App() {
         {/* <Route path='#Projects' element={ < Projects /> }/> */}
       </Routes>
 
-    </React.Fragment>
+    </>
   );
 }
 

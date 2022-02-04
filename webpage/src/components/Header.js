@@ -10,10 +10,10 @@ import theme from '../assets/styles/themes';
 
 const Header = () => {
    return (
-      <div sx={{ backgroundColor: theme.palette.primary.light }}>
+      <header sx={{ backgroundColor: theme.palette.primary.light }}>
          <Button  href='/' variant='contained'> home </Button>
          <Button href='#Projects' variant='contained'> expertise </Button>
-      </div>
+      </header>
    )
 }
 
