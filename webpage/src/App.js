@@ -27,16 +27,15 @@ const StyledImage = styled.img`
 function App() {
   return (
     <>
-      <Container maxWidth='xl' sx={{ height: '100%' }} >
+      <Container maxWidth={false} sx={{ height: '100%' }} >
         <Box sx={{
           display: 'flex',
           alignItems: 'center',
           border: `1px solid ${theme.palette.primary.light}`,
           // borderColor: theme.pallet.primary.borders, 
-          backgroundColor: theme.palette.primary.light,
+          // backgroundColor: theme.palette.primary.light,
         }}>
-          < Header sx={{ display: 'flex', justifyContent: 'right' }} />
-          <h2> Welcome to my Website! </h2>
+          < Header />
         </Box>
       </Container>
 
