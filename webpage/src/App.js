@@ -30,7 +30,7 @@ function App() {
       < Header />
 
 
-      <Container maxWidth='lg'>
+      <Container id='Bio' maxWidth='xl'>
         <h1> Bio / About me : </h1>
         <Box sx={{ display: 'flex' }}>
           <ul>

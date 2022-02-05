@@ -32,23 +32,24 @@ const Header = () => {
 
    return (
       // <header >
-      //    <Box sx={{
-      //       display: 'flex',
-      //       // alignItems: 'center',
-      //       border: `1px solid red`,
-      //       top: `0`,
-      //       height: `10vh`,
-      //       width: `100%`,
-      //       zIndex: 1,
-      //       // borderColor: theme.pallet.primary.borders, 
-      //       backgroundColor: '#40afaf',
-      //       position: `fixed`,
-      //    }}>
-      <StyledHeader>
-         <Button href='/' variant='contained'> home </Button>
-         <Button href='#Projects' variant='contained'> expertise </Button>
-      </StyledHeader>
-      //    </Box>
+      <Box sx={{
+         display: 'flex',
+         // alignItems: 'center',
+         border: `1px solid red`,
+         top: `0`,
+         height: `8vh`,
+         width: `100%`,
+         zIndex: 1,
+         // borderColor: theme.pallet.primary.borders, 
+         backgroundColor: '#40afaf',
+         // position: `fixed`,
+      }}>
+         <StyledHeader>
+            <Button href='/' variant='contained'> home </Button>
+            <Button href='#Projects' variant='contained'> expertise </Button>
+            <Button href='#Bio' variant='contained'> expertise </Button>
+         </StyledHeader>
+      </Box>
       // </header>
    )
 }
