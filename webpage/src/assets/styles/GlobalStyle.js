@@ -5,12 +5,19 @@ const GlobalStyle = createGlobalStyle`
    body{
       background-color: ${theme.palette.primary.light};
       color: ${theme.palette.tertiary.text};
+      // overflow:visible;
+
+   }
+   #vanta{
+      width: 100%;
+      height: 100vh;
+      // z-index: -1;
    }
 
    h1,
    h2,
    h3{
-      margin: 0px;
+      margin: 0;
       font-weight: 600;
       color: 'blue';
    }

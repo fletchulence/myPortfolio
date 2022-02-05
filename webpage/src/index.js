@@ -12,7 +12,7 @@ import GlobalStyle from './assets/styles/GlobalStyle'
 
 
 ReactDOM.render(
-  <React.StrictMode>
+  <React.Fragment>
     <CssBaseline />
     <ThemeProvider theme={theme}>
       <GlobalStyle/>
@@ -20,7 +20,7 @@ ReactDOM.render(
         <App />
       </Router>
     </ThemeProvider>
-  </React.StrictMode>,
+  </React.Fragment>,
   document.getElementById('root')
 );
 
