@@ -6,7 +6,7 @@ const StyledHeader = styled.header`
    width: 100%;
    height: 100vh;
    top: 0;
-   z-index: 1;
+   // z-index: 2;
 `
 
 const StyledButton = styled.button`

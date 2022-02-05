@@ -8,7 +8,6 @@ const BannerImage = styled.div`
     height: 100vh;
 
     margin: 0;
-    opacity: 1;
     background-image: url(${background});
     background-size: cover;
    //  display: flex;

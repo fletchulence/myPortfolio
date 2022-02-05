@@ -39,7 +39,7 @@ const Header = () => {
          top: `0`,
          height: `8vh`,
          width: `100%`,
-         zIndex: 1,
+         // zIndex: 1,
          // borderColor: theme.pallet.primary.borders, 
          backgroundColor: '#40afaf',
          // position: `fixed`,
@@ -47,7 +47,7 @@ const Header = () => {
          <StyledHeader>
             <Button href='/' variant='contained'> home </Button>
             <Button href='#Projects' variant='contained'> expertise </Button>
-            <Button href='#Bio' variant='contained'> expertise </Button>
+            <Button href='#Bio' variant='contained'> bio </Button>
          </StyledHeader>
       </Box>
       // </header>
