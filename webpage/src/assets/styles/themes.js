@@ -3,6 +3,13 @@ import { createTheme } from '@mui/material/styles';
 
 // A custom theme for this app
 const theme = createTheme({
+  components: {
+    MuiLink:{
+      defaultProps: {
+        // disableUn
+      }
+    }
+  },
   palette: {
     type: 'dark',
     primary: {
