@@ -27,17 +27,8 @@ const StyledImage = styled.img`
 function App() {
   return (
     <>
-      <Container maxWidth={false} sx={{ height: '100%' }} >
-        <Box sx={{
-          display: 'flex',
-          alignItems: 'center',
-          border: `1px solid ${theme.palette.primary.light}`,
-          // borderColor: theme.pallet.primary.borders, 
-          // backgroundColor: theme.palette.primary.light,
-        }}>
-          < Header />
-        </Box>
-      </Container>
+      < Header />
+
 
       <Container maxWidth='lg'>
         <h1> Bio / About me : </h1>
