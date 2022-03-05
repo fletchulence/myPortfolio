@@ -57,20 +57,6 @@ const ProjCardInfo = [
    },
 ]
 
-// Links to projects
-// const Link1 = 'https://nasa-photo-of-the-day-seven-kappa.vercel.app/'; // nasa PhotoOfTheDay
-// const Link2 = 'https://front-end-chi-livid.vercel.app/'
-
-// const ProjLinks = [
-//    // 'https://nasa-photo-of-the-day-seven-kappa.vercel.app/',
-//    // 'https://front-end-tau-ashen.vercel.app/',
-//    <a href={ Link2 } target='_blank' rel="noopener noreferrer"> Anywhere Fitness </a>,
-//    <a href={ Link1 } target='_blank' rel="noopener noreferrer"> Nasa Photo of the Day </a>,
-//    // <a href={ /* Link1 */ } target='_blank' rel="noopener noreferrer"> Nasa Photo of the Day </a>,
-// ]
-
-// let arr = [];
-
 function Projects() {
    return (
       <Card

@@ -33,7 +33,7 @@ function App() {
       {/* < FishCal /> */}
 
 
-      <Container id='Bio' maxWidth='xl'>
+      {/* <Container id='Bio' maxWidth='xl'>
         <h1> Bio / About me : </h1>
         <Box sx={{ display: 'flex' }}>
           <ul>
@@ -42,17 +42,17 @@ function App() {
             <li> looking to be a fullStack Dev for the REST OF TIME</li>
           </ul>
         </Box>
-      </Container>
+      </Container> */}
 
-      <Container id='Projects' maxWidth='lg'>
+      {/* <Container id='Projects' maxWidth='lg'>
         <h1> Projects: </h1>
         <Projects sx={{ border: theme.palette.primary.borders }} />
-      </Container>
+      </Container> */}
 
-      <Container>
+      {/* <Container>
         <h1> Hobbies: </h1>
         <StyledImage src={NYCIMG} alt="NYC skyline" />
-      </Container>
+      </Container> */}
 
       {/* 
       //! what are the ROUTES that i'll need in general?
