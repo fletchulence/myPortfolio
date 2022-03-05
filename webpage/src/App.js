@@ -13,6 +13,7 @@ import {
 // component imports
 import Home from './components/Home';
 import Header from './components/Header';
+import FishCal from './components/FishCal';
 // import './background.css'
 import Projects from './components/Projects';
 
@@ -28,6 +29,8 @@ function App() {
   return (
     <>
       < Header />
+      {/* < About /> */}
+      {/* < FishCal /> */}
 
 
       <Container id='Bio' maxWidth='xl'>
@@ -57,6 +60,8 @@ function App() {
            */}
       <Routes>
         <Route path='/' element={<Home />} />
+        <Route path='/fish' element={<FishCal />}
+        />
         {/* <Route path='#Projects' element={ < Projects /> }/> */}
       </Routes>
 
