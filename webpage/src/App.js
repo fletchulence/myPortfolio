@@ -14,46 +14,16 @@ import {
 import Home from './components/Home';
 import Header from './components/Header';
 import FishCal from './components/FishCal';
-// import './background.css'
-import Projects from './components/Projects';
 
-// img imports
-import NYCIMG from './assets/images/IMG_0480.jpg'
-
-const StyledImage = styled.img`
-  height: 800px;
-  margin: 15px;
-`
+// const StyledImage = styled.img`
+//   height: 800px;
+//   margin: 15px;
+// `
 
 function App() {
   return (
     <>
       < Header />
-      {/* < About /> */}
-      {/* < FishCal /> */}
-
-
-      {/* <Container id='Bio' maxWidth='xl'>
-        <h1> Bio / About me : </h1>
-        <Box sx={{ display: 'flex' }}>
-          <ul>
-            <li> worked on a farm </li>
-            <li> degree in MechE </li>
-            <li> looking to be a fullStack Dev for the REST OF TIME</li>
-          </ul>
-        </Box>
-      </Container> */}
-
-      {/* <Container id='Projects' maxWidth='lg'>
-        <h1> Projects: </h1>
-        <Projects sx={{ border: theme.palette.primary.borders }} />
-      </Container> */}
-
-      {/* <Container>
-        <h1> Hobbies: </h1>
-        <StyledImage src={NYCIMG} alt="NYC skyline" />
-      </Container> */}
-
       {/* 
       //! what are the ROUTES that i'll need in general?
       //!    -- do i need routes anyway?
