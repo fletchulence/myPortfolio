@@ -46,11 +46,11 @@ const Header = () => {
       }}>
          <StyledHeader>
             <Button href='/' variant='contained'> home </Button>
-            <Button href='#Projects' variant='contained'> expertise </Button>
-            <Button href='#Bio' variant='contained'> bio </Button>
+            <Button href='/#Projects' variant='contained'> expertise </Button>
+            <Button href='/#Bio' variant='contained'> BIO </Button>
+            <Button href='/fish' variant='contained'> FishCal </Button>
          </StyledHeader>
       </Box>
-      // </header>
    )
 }
 
