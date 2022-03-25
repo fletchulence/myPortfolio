@@ -12,11 +12,11 @@ import LoginForm from "./secretComponents/Login";
 
 const FishCal = () => {
    console.log('im working')
-   let navigate = useNavigate();
+   // let navigate = useNavigate();
    let LoggedIn = false;
    return (
       <>
-         { (LoggedIn) ? <LoginForm/> : <Calendar/>}
+         { (LoggedIn) ? <Calendar/> : <LoginForm/> }
       </>
    )
 }
