@@ -6,26 +6,20 @@ import { useState, useEffect } from "react";
 
 import LoginForm from "./secretComponents/Login";
 
+// function LoggedIn() {
+//    return false;
+// };
+
 const FishCal = () => {
    console.log('im working')
-   let navigate = useNavigate()
-   if ( LoggedIn === true ) {
-      return(
-         <>
-           <Calendar/>
-         </>
-      )
-   } else {
-      return (
-         <>
-            <LoginForm/>
-         </>
-      )
-   }
+   let navigate = useNavigate();
+   let LoggedIn = false;
+   return (
+      <>
+         { (LoggedIn) ? <LoginForm/> : <Calendar/>}
+      </>
+   )
 }
 
-function LoggedIn() {
-   return true;
-}
 
 export default FishCal
