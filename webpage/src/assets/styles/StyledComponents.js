@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 const StyledHeader = styled.header`
    margin: 0;
-   position: relative;
+   position: top;
    width: 100%;
    height: 100vh;
    top: 0;
@@ -18,7 +18,12 @@ const StyledLink = styled.link`
 `
 
 const StyledFooter = styled.footer`
-
+   position: bottom;
+   margin: 0;
+   backgroundColor: blue;
+   width: 100%;
+   height: 100vh;
+   display: flex;
 `
 
 export { 
