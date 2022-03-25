@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 // import { Link } from 'react-router-dom';
 import Button from '@mui/material/Button';
 import { StyledHeader } from '../assets/styles/StyledComponents';
@@ -10,10 +11,15 @@ import {
    Container,
    Box,
 } from '@mui/material';
-
-
+import PhishingIcon from '@mui/icons-material/Phishing';
 
 const Header = () => {
+   let navigate = useNavigate();
+   /* async */ function handleClick(e) {
+      // e.preventDefault()
+      /* await LoginForm(e.target)*/
+      navigate('/fish')
+   }
 
    // var tableOffset = header.offset().top;
    // var header = ("#table-1 > thead").clone();
@@ -29,6 +35,7 @@ const Header = () => {
    //       fixedHeader.hide();
    //    }
    // });
+   
 
    return (
       // <header >
@@ -48,8 +55,8 @@ const Header = () => {
             <Button href='/' variant='contained'> home </Button>
             <Button href='/#Projects' variant='contained'> expertise </Button>
             <Button href='/#Bio' variant='contained'> BIO </Button>
-            <Button href='/fish' variant='contained'> FishCal </Button>
          </StyledHeader>
+            <PhishingIcon onClick={()=> handleClick()}> </PhishingIcon>
       </Box>
    )
 }
