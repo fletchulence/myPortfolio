@@ -15,11 +15,6 @@ import Home from './components/Home';
 import Header from './components/Header';
 import FishCal from './components/FishCal';
 
-// const StyledImage = styled.img`
-//   height: 800px;
-//   margin: 15px;
-// `
-
 function App() {
   return (
     <>
@@ -30,8 +25,8 @@ function App() {
            */}
       <Routes>
         <Route path='/' element={<Home />} />
-        <Route path='/fish' element={<FishCal />}
-        />
+        <Route path='/fish' element={<FishCal/>}/>
+        {/* <Route path='/login' element={<Login/>}/> */}
         {/* <Route path='#Projects' element={ < Projects /> }/> */}
       </Routes>
 
