@@ -18,7 +18,7 @@ const Header = () => {
    /* async */ function handleClick(e) {
       // e.preventDefault()
       /* await LoginForm(e.target)*/
-      navigate('/fish')
+      navigate('/login')
    }
 
    // var tableOffset = header.offset().top;
