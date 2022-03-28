@@ -13,7 +13,9 @@ import {
 // component imports
 import Home from './components/Home';
 import Header from './components/Header';
-import FishCal from './components/FishCal';
+// import FishCal from './components/FishCal';
+import Login from './components/secretComponents/Login';
+import Calendar from './components/Calendar';
 
 function App() {
   return (
@@ -25,8 +27,8 @@ function App() {
            */}
       <Routes>
         <Route path='/' element={<Home />} />
-        <Route path='/fish' element={<FishCal/>}/>
-        {/* <Route path='/login' element={<Login/>}/> */}
+        <Route path='/fish' element={<Calendar/>}/>
+        <Route path='/login' element={<Login/>}/>
         {/* <Route path='#Projects' element={ < Projects /> }/> */}
       </Routes>
 
