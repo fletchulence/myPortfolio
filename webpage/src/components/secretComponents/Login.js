@@ -1,13 +1,15 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
+const initialFormVals = {
+   fullname: '',
+   password:''
+};
+
 export default function Login(props) {
    const navigate = useNavigate();
    // console.log(props)
-   const [state, setState] = useState({
-      fullname: '',
-      password:''
-   });
+   const [state, setState] = useState(initialFormVals);
 
    function handleChange (evt) {
       setState({
@@ -19,10 +21,10 @@ export default function Login(props) {
    function handleSubmit(evt) {
       evt.preventDefault();
       if (state.fullname === 'debra' && state.password === 'fletcher') {
-         console.log('this will be correct for you')
-         navigate('/fishCal')
+         navigate('/fish')
       } else {
-         alert('Seems you entered your Name and Password wrong! Try again, please')
+         alert('Seems you entered your Name and Password wrong! Try again, please');
+         setState(initialFormVals)
       }
    };
    // route to the protected
