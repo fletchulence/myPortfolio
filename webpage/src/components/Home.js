@@ -6,6 +6,8 @@ import theme from './../assets/styles/themes';
 
 
 // components
+import Header from './Header';
+import Footer from './Footer';
 import Projects from './Projects';
 import Bio from './Bio';
 
@@ -20,15 +22,37 @@ const BannerImage = styled.div`
     align-self: center;
     justify-content: center;
 `
+const StyledFooter = styled.footer`
+    width: 100%;
+    height: 30vh;
+
+    margin: 0;
+   //  background-image: none;
+   //  background-size: cover;
+    display: flex;
+    align-self: center;
+    justify-content: center;
+`
 function Home(props) {
    return (
-      
+      <>
+      <header>
+         <Header/>
+      </header>
+      <main>
          <BannerImage>
+            {/* <div> */}
             <h1> Projects: </h1>
             <Projects sx={{ border: theme.palette.primary.borders }}/>
             <Bio />
             This is my homepage
+            {/* </div> */}
          </BannerImage>
+      </main>
+      <StyledFooter>
+         <Footer/>
+      </StyledFooter>
+      </>
    )
 }
 
