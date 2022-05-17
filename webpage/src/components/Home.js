@@ -10,6 +10,7 @@ import Header from './Header';
 import Footer from './Footer';
 import Projects from './Projects';
 import Bio from './Bio';
+import { Loading } from './secretComponents/Loading';
 
 const BannerImage = styled.div`
     width: 100%;
@@ -34,7 +35,9 @@ const StyledFooter = styled.footer`
     justify-content: center;
 `
 function Home(props) {
-   return (
+   if (props.isLoading === true){
+      return <Loading/>
+   } else return (
       <>
       <header>
          <Header/>
