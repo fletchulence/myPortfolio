@@ -1,12 +1,9 @@
 import React from 'react'
 
 export const Loading = (props) => {
-
-   if (props.isLoading === true){
-      return (
-        <div>Loading</div>
-      )
-   }
+   return (
+      <div>Loading</div>
+   )
 }
 
 
