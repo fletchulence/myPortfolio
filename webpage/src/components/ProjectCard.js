@@ -57,6 +57,10 @@ export default function ProjectOverviewCard(props) {
     setExpanded(!expanded);
   };
 
+  const handleErrorClick = ()=>{
+    alert('-- these arent working just yet -- Come back soon for the revamp!')
+  }
+
   const handleLinkClick = () => {
     window.open(linkFor, '_blank')
   }
@@ -82,7 +86,7 @@ export default function ProjectOverviewCard(props) {
         }
         action={
           <IconButton aria-label="settings">
-            <MoreVertIcon /* //todo:make a modal to open for viewing more options  */ />
+            <MoreVertIcon onClick={handleErrorClick} /* //todo:make a modal to open for viewing more options  */ />
           </IconButton>
         }
         title={proj_name}

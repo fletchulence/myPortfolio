@@ -13,7 +13,7 @@ import {
 } from '@mui/material';
 import PhishingIcon from '@mui/icons-material/Phishing';
 
-const Header = () => {
+const Header = (props) => {
    let navigate = useNavigate();
    /* async */ function handleClick(e) {
       // e.preventDefault()
@@ -42,22 +42,21 @@ const Header = () => {
       <Box sx={{
          display: 'flex',
          // alignItems: 'center',
-         border: `1px solid red`,
          top: `0`,
-         height: `8vh`,
+         height: `auto`,
          width: `100%`,
-         // zIndex: 1,
-         // borderColor: theme.pallet.primary.borders, 
-         backgroundColor: '#40afaf',
+         backgroundImage: `linear-gradient(#40afaf, ${theme.palette.primary.light})`,
          // position: `fixed`,
       }}>
+      
          <StyledHeader>
             <Button href='/' variant='contained'> home </Button>
             <Button href='/#Projects' variant='contained'> expertise </Button>
             <Button href='/#Bio' variant='contained'> BIO </Button>
          </StyledHeader>
             <PhishingIcon onClick={()=> handleClick()}> </PhishingIcon>
-      </Box>
+     
+    </Box>
    )
 }
 
