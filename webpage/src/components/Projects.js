@@ -18,12 +18,14 @@ import { Box, Container } from '@mui/material';
 const ProjCardInfo = [
    {
       proj_name: 'Anywhere Fitness',
-      role: 'Back End Dev',
+      role: 'Backend Developer',
       image: anywhere_thumb,
       linkFor: 'https://front-end-chi-livid.vercel.app/',
-      bullet1: 'This is still a Work in progress! ',
-      bullet2: 'I was the only person assigned to the back end of this project. I am still working out kinks.',
-      bullet3: 'Trying to add the classes to each person, so that they auto populate correctly. I will probably be working on this project for some time :)',
+      bullet1: `● Single-handedly created responsive React platform and designed backend PostgreSQL database for app that enables
+      fitness instructors and students to schedule classes`,
+      bullet2: `● Developed Node.js backend of student attendance punch pass system to enable students to track class-specific
+      progress using Knex to seed and populate tables and Express to generate endpoints for frontend hooks`,
+      bullet3: '● Assisted Frontend with state and Axios calls to my Heroku database to ensure correct data pull-through',
       icon_color: '#ef5350',
       github_link: 'https://github.com/Build-Week-Anywhere-Fitness-6-2021',
       comments_section: ''
@@ -33,9 +35,10 @@ const ProjCardInfo = [
       role: 'Project Manager',
       image: potluck_thumb,
       linkFor: 'https://potluck1-front-end.vercel.app/',
-      bullet1: 'worked to help the backend and frontend communicate',
-      bullet2: 'fixed issues with styling',
-      bullet3: 'Passed props where appropriate',
+      bullet1: `● Facilitated test-driven development, collaboration between 5 developers, and coordinated project goals in development of React app to facilitate planning of potluck events.
+      ● Utilized GitHub to review component updates, pull-requests, and merge conflicts and deployed via Vercel`,
+      bullet2: '● Implemented Axios protected routes and ensured persistence of State management within cloud-native application',
+      bullet3: '● Established styling for responsive hamburger menu using Material-UI and media queries',
       icon_color: '#ef5350',
       github_link: 'https://github.com/Potluck-Planner-A/front-end',
       comments_section: ''
