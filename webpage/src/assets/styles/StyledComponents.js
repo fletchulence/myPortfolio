@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import theme from "./themes";
 import treesBackground from './../images/background_photos/geran-de-klerk-WJkc3xZjSXw-unsplash.webp';
 import woodBackground from './../images/background_photos/woodBackground.webp';
 
@@ -11,17 +12,16 @@ const StyledHeader = styled.header`
    // z-index: 2;
 `
 const TreesBackground = styled.div`
-    margin: 0;
-    padding: 5%;
-    width: 100%;
-    height: auto;
-    background-attachment: fixed;
-    background-image: url(${treesBackground});
-    background-size: cover;
-   //  display: flex;
-    align-self: center;
-    justify-content: center;
-    `
+   margin: 0;
+   padding: 5%;
+   width: 100%;
+   height: auto;
+   background-attachment: fixed;
+   background-image: url(${treesBackground});
+   background-size: cover;
+   align-self: center;
+   justify-content: center;
+   `
 
 const WoodBackground = styled.div`
    margin: 0;
@@ -31,7 +31,6 @@ const WoodBackground = styled.div`
    background-attachment: fixed;
    background-image: url(${woodBackground});
    background-size: cover;
-   //  display: flex;
    align-self: center;
    justify-content: center;
 `
@@ -54,6 +53,8 @@ const StyledFooter = styled.footer`
     display: flex;
     align-self: center;
     justify-content: center;
+    flex-flow: column;
+    background-image: linear-gradient( ${theme.palette.primary.light}, #40afaf);
 `
 
 export { 
