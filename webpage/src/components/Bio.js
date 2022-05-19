@@ -11,7 +11,7 @@ export default function Bio() {
       <>
          <h1> Bio / About me : </h1>
          <Container id='Bio' maxWidth='xl'>
-            <Box sx={{ display: 'flex' }}>
+            <Box sx={{ display: 'flex', color: "red", backgroundColor: "black" }}>
                <ul>
                   <li> worked on a farm </li>
                   <li> degree in MechE </li>

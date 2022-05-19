@@ -1,24 +1,39 @@
 import styled from "styled-components";
-import background from './../images/background_photos/geran-de-klerk-WJkc3xZjSXw-unsplash.webp';
+import treesBackground from './../images/background_photos/geran-de-klerk-WJkc3xZjSXw-unsplash.webp';
+import woodBackground from './../images/background_photos/woodBackground.webp';
 
 const StyledHeader = styled.header`
    margin: 0;
    position: top;
    width: 100%;
-   height: 100vh;
+   height: 10vh;
    top: 0;
    // z-index: 2;
 `
-const BannerImage = styled.div`
-    width: 100%;
-    height: 100vh;
-
+const TreesBackground = styled.div`
     margin: 0;
-    background-image: url(${background});
+    padding: 5%;
+    width: 100%;
+    height: auto;
+    background-attachment: fixed;
+    background-image: url(${treesBackground});
     background-size: cover;
    //  display: flex;
     align-self: center;
     justify-content: center;
+    `
+
+const WoodBackground = styled.div`
+   margin: 0;
+   padding: 5%;
+   width: 100%;
+   height: auto;
+   background-attachment: fixed;
+   background-image: url(${woodBackground});
+   background-size: cover;
+   //  display: flex;
+   align-self: center;
+   justify-content: center;
 `
 
 const StyledButton = styled.button`
@@ -44,6 +59,7 @@ const StyledFooter = styled.footer`
 export { 
    StyledHeader, 
    StyledFooter,
-   BannerImage
+   TreesBackground,
+   WoodBackground,
 }
 
