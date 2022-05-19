@@ -40,14 +40,14 @@ const LikedProj = styled((props) => {
 
 export default function ProjectOverviewCard(props) {
   const {
-    likes,
+    likes, //! will be using this later to provide ability to have recruiters interact
     proj_name,
     role,
     linkFor,
     bullet1,
     bullet2,
     bullet3,
-    icon_color, // unused for the purposes of styling -- might change later
+    // icon_color, //! unused for the purposes of styling -- might change later
     image
   } = props;
   const [expanded, setExpanded] = React.useState(false);
@@ -57,9 +57,12 @@ export default function ProjectOverviewCard(props) {
     setExpanded(!expanded);
   };
 
+  const handleErrorClick = ()=>{
+    alert('-- these arent working just yet -- Come back soon for the revamp!')
+  }
+
   const handleLinkClick = () => {
     window.open(linkFor, '_blank')
-    // console.log('show me', linkFor)
   }
 
   const handleLike = () => {
@@ -83,7 +86,7 @@ export default function ProjectOverviewCard(props) {
         }
         action={
           <IconButton aria-label="settings">
-            <MoreVertIcon /* //todo:make a modal to open for viewing more options  */ />
+            <MoreVertIcon onClick={handleErrorClick} /* //todo:make a modal to open for viewing more options  */ />
           </IconButton>
         }
         title={proj_name}
@@ -119,10 +122,10 @@ export default function ProjectOverviewCard(props) {
       </CardActions>
       <Collapse in={expanded} timeout="auto" unmountOnExit>
         <CardContent>
-          <Typography paragraph>Method:</Typography>
-          <Typography paragraph> {bullet1} </Typography>
-          <Typography paragraph> {bullet2} </Typography>
-          <Typography paragraph> {bullet3} </Typography>
+          <Typography variant='h4'>Notables:</Typography>
+          <Typography variant='inherit'> {bullet1} </Typography>
+          <Typography variant='inherit'> {bullet2} </Typography>
+          <Typography variant='inherit'> {bullet3} </Typography>
         </CardContent>
       </Collapse>
     </Card>

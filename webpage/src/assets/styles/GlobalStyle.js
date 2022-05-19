@@ -4,7 +4,7 @@ import theme from "./themes";
 const GlobalStyle = createGlobalStyle`
    body{
       background-color: ${theme.palette.primary.light};
-      color: ${theme.palette.tertiary.text};
+      color: ${pr => pr.theme.palette.tertiary.text};
       // overflow:visible;
 
    }
