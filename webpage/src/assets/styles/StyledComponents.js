@@ -7,7 +7,7 @@ const StyledHeader = styled.header`
    margin: 0;
    position: top;
    width: 100%;
-   height: 10vh;
+   height: auto;
    top: 0;
    // z-index: 2;
 `
@@ -45,16 +45,13 @@ const StyledLink = styled.link`
 
 const StyledFooter = styled.footer`
     width: 100%;
-    height: 30vh;
-
+    height: auto;
     margin: 0;
-   //  background-image: none;
-   //  background-size: cover;
     display: flex;
-    align-self: center;
-    justify-content: center;
-    flex-flow: column;
+    justify-content: space-around;
+    flex-flow: row wrap;
     background-image: linear-gradient( ${theme.palette.primary.light}, #40afaf);
+    padding: 5%;
 `
 
 export { 
