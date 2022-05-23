@@ -20,13 +20,14 @@ function Home(props) {
       <>
       <Header/>
       <section>
+         <WoodBackground>
+            <Typography variant='h3' sx={{ display: 'flex'  }}> Bio: </Typography> 
+            <Bio/>
+         </WoodBackground>
          <TreesBackground>
-            <Typography variant='h1' sx={{ display: 'flex'}}> Projects: </Typography> 
+            <Typography variant='h3' sx={{ display: 'flex' }}> Projects: </Typography> 
             <Projects sx={{ border: theme.palette.primary.borders }}/>
          </TreesBackground>
-         <WoodBackground>
-            <Bio sx={{ color: 'blue'}}/>
-         </WoodBackground>
       </section>
       <StyledFooter>
          <Footer/>
