@@ -9,13 +9,14 @@ import theme from '../assets/styles/themes';
 
 import {
    Container,
+   Typography,
    Box,
 } from '@mui/material';
 import PhishingIcon from '@mui/icons-material/Phishing';
 
 const Header = (props) => {
    let navigate = useNavigate();
-   /* async */ function handleClick(e) {
+   /* async */ function handleFish(e) {
       // e.preventDefault()
       /* await LoginForm(e.target)*/
       navigate('/login')
@@ -38,24 +39,22 @@ const Header = (props) => {
    
 
    return (
-      // <header >
       <Box sx={{
          display: 'flex',
-         // alignItems: 'center',
          top: `0`,
          height: `auto`,
          width: `100%`,
          backgroundImage: `linear-gradient(#40afaf, ${theme.palette.primary.light})`,
-         // position: `fixed`,
       }}>
-      
          <StyledHeader>
-            <Button href='/' variant='contained'> home </Button>
-            <Button href='/#Projects' variant='contained'> expertise </Button>
-            <Button href='/#Bio' variant='contained'> BIO </Button>
+            <Typography variant='h1' display={'flex'}>
+               David A. Fletcher
+            </Typography>
+            {/* <Button href='/' variant='outlined'> home </Button>
+            <Button href='/#Projects' variant='outlined'> expertise </Button>
+            <Button href='/#Bio' variant='outlined'> BIO </Button> */}
          </StyledHeader>
-            <PhishingIcon onClick={()=> handleClick()}> </PhishingIcon>
-     
+            <PhishingIcon onClick={()=> handleFish()}> </PhishingIcon>
     </Box>
    )
 }
