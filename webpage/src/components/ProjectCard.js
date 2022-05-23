@@ -40,7 +40,7 @@ const LikedProj = styled((props) => {
 
 export default function ProjectOverviewCard(props) {
   const {
-    likes, //! will be using this later to provide ability to have recruiters interact
+    // likes, //! will be using this later to provide ability to have recruiters interact
     proj_name,
     role,
     linkFor,
@@ -51,6 +51,8 @@ export default function ProjectOverviewCard(props) {
     image
   } = props;
   const [expanded, setExpanded] = React.useState(false);
+  // const [more, setMore] = React.useState(false);
+    // 
   const [liked, setLiked] = React.useState(false)
 
   const handleExpandClick = () => {
@@ -96,7 +98,7 @@ export default function ProjectOverviewCard(props) {
         component="img"
         height="200"
         image={image}
-        alt="Potluck Project"
+        alt="Potluck Planner Project"
       />
       <CardActions disableSpacing>
         <LikedProj
