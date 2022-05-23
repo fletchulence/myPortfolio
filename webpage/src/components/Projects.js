@@ -12,7 +12,10 @@ import theme from './../assets/styles/themes'
 import ProjCard from './ProjectCard'
 
 // MUI IMPORTS:
-import { Box, Container } from '@mui/material';
+import { 
+   Box, 
+   Container 
+} from '@mui/material';
 
 //todo: add alt txt for the imgs
 const ProjCardInfo = [
@@ -74,32 +77,31 @@ function Projects() {
       <Container
          sx={{
             display: 'flex',
-            flexFlow: 'row wrap',
             justifyContent: 'center',
             outline: theme.palette.primary.main.text,
-            // backgroundColor: 'clear',
          }} >
-            {/* <h1> Projects: </h1> */}
          <Box sx={{
             display: 'flex',
             flexFlow: 'row wrap',
-            justifyContent: 'space-between',
+            justifyContent: 'center',
             width: '80%',
             alignSelf: 'center',
          }}>
-            {ProjCardInfo.map((e, idx) =>
+            {ProjCardInfo.map((el, idx) =>
                <ProjCard
                key={idx}
-               proj_name={e.proj_name}
-               role={e.role}
-               linkFor={e.linkFor}
-               image={e.image}
-               bullet1={e.bullet1}
-               bullet2={e.bullet2}
-               bullet3={e.bullet3}
-               github_link={e.github_link}
-               > {e} </ProjCard>
-               )}
+               proj_name={el.proj_name}
+               role={el.role}
+               linkFor={el.linkFor}
+               image={el.image}
+               bullet1={el.bullet1}
+               bullet2={el.bullet2}
+               bullet3={el.bullet3}
+               github_link={el.github_link}
+               > 
+                  {el} 
+               </ProjCard>
+            )}
          </Box>
       </Container>
    )

@@ -1,14 +1,15 @@
-// import React from 'react';
-import { Routes, Route } from 'react-router-dom';
-import styled from 'styled-components';
 import React from 'react';
-import theme from './assets/styles/themes';
+import { Routes, Route } from 'react-router-dom';
 
-//MUI imports
-import {
-  Container,
-  Box,
-} from '@mui/material';
+/**
+ * MUI usage imports
+ *  import {
+ *    Container,
+ *    Box,
+ *    Typography,
+ *    
+ *  } from '@mui/material';
+*/
 
 // component imports
 import Home from './components/Home';
