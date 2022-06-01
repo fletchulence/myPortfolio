@@ -23,6 +23,7 @@ function App() {
         <Route path='/' element={<Home />} />
         <Route path='/fish' element={<Calendar/>}/>
         <Route path='/login' element={<Login/>}/>
+        {/* <Route path='/comment' element={<CommentForm/>}/> */}
       </Routes>
     </>
   );
