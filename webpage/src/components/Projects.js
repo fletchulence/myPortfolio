@@ -5,6 +5,7 @@ import anywhere_thumb from '../assets/images/anywhere_dashboard1.webp';
 import potluck_thumb from '../assets/images/potluck_home.webp';
 import nasa_thumb from '../assets/images/nasa_home.webp';
 import african_mp from '../assets/images/African_marketPlace.webp';
+import underdog_thumb from '../assets/images/underdog_devs.webp';
 
 // importing theme -- when can i stop doing this??
 import theme from './../assets/styles/themes'
@@ -31,7 +32,8 @@ const ProjCardInfo = [
       bullet3: '● Assisted Frontend with state and Axios calls to my Heroku database to ensure correct data pull-through',
       icon_color: '#ef5350',
       github_link: 'https://github.com/Build-Week-Anywhere-Fitness-6-2021',
-      comments_section: ''
+      comments_section: '',
+      likes: 25,
    },
    {
       proj_name: 'Potluck Planner',
@@ -44,7 +46,8 @@ const ProjCardInfo = [
       bullet3: '● Established styling for responsive hamburger menu using Material-UI and media queries',
       icon_color: '#ef5350',
       github_link: 'https://github.com/Potluck-Planner-A/front-end',
-      comments_section: ''
+      comments_section: '',
+      likes: 33
    },
    {
       proj_name: 'Nasa Photo of the Day',
@@ -56,7 +59,8 @@ const ProjCardInfo = [
       bullet3: 'You will notice that nothing in this project is strictly written. All is populated. Fully modular.',
       icon_color: theme.palette.primary.borders,
       github_link: 'https://github.com/fletchulence/nasa-photo-of-the-day',
-      comments_section: ''
+      comments_section: '',
+      likes: 10
    },
    {
       proj_name: 'African Marketplace',
@@ -68,14 +72,27 @@ const ProjCardInfo = [
       bullet3: 'The API isnt pulling correctly from the one that was set up, but this was something that happened beacuse we didnt have a proper devoted team member in the backend role. Eventually I want to go back to this and redevelop a backend for it.',
       icon_color: theme.palette.tertiary.text,
       github_link: 'https://github.com/Build-Week-ft-african-marketplace-1/front-end/tree/main/african-marketplace',
-      comments_section: ''
+      comments_section: '',
+      likes: 4
+   },
+   {
+      proj_name: 'Underdog Devs',
+      role: 'Backend Engineer',
+      image: underdog_thumb,
+      linkFor: '',
+      bullet1: 'Collaborated with multiple teams on overall coding standards and testing suites within mentor-driven software development trade school for recently incarcerated individuals',
+      bullet2: 'Created standardized response codes from backend API endpoints to conform to REST best practices which will carry forward for future developer teams',
+      bullet3: 'Revised Jest testing suite to create cohesive test results that better align with response data from user inputs',
+      icon_color: theme.palette.tertiary.text,
+      github_link: 'https://github.com/Build-Week-ft-african-marketplace-1/front-end/tree/main/african-marketplace',
+      comments_section: '',
+      likes: 20
    },
 ]
 
 function Projects() {
    return (
-      <Container
-         sx={{
+      <Container sx={{
             display: 'flex',
             justifyContent: 'center',
             outline: theme.palette.primary.main.text,
@@ -83,21 +100,21 @@ function Projects() {
          <Box sx={{
             display: 'flex',
             flexFlow: 'row wrap',
-            justifyContent: 'center',
-            width: '80%',
+            justifyContent: 'space-around',
             alignSelf: 'center',
          }}>
             {ProjCardInfo.map((el, idx) =>
                <ProjCard
-               key={idx}
-               proj_name={el.proj_name}
-               role={el.role}
-               linkFor={el.linkFor}
-               image={el.image}
-               bullet1={el.bullet1}
-               bullet2={el.bullet2}
-               bullet3={el.bullet3}
-               github_link={el.github_link}
+                  key={idx}
+                  likes={el.likes}
+                  proj_name={el.proj_name}
+                  role={el.role}
+                  linkFor={el.linkFor}
+                  image={el.image}
+                  bullet1={el.bullet1}
+                  bullet2={el.bullet2}
+                  bullet3={el.bullet3}
+                  github_link={el.github_link}
                > 
                   {el} 
                </ProjCard>
