@@ -6,6 +6,7 @@ import CardMedia from '@mui/material/CardMedia';
 import CardContent from '@mui/material/CardContent';
 import CardActions from '@mui/material/CardActions';
 import Collapse from '@mui/material/Collapse';
+import { Badge } from '@mui/material';
 import Avatar from '@mui/material/Avatar';
 import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
@@ -24,7 +25,7 @@ const ExpandMore = styled((props) => {
   transform: !expand ? 'rotate(0deg)' : 'rotate(180deg)',
   marginLeft: 'auto',
   transition: theme.transitions.create('transform', {
-    duration: theme.transitions.duration.shortest,
+    duration: theme.transitions.duration.longest,
   }),
 }));
 
@@ -39,8 +40,8 @@ const LikedProj = styled((props) => {
 }));
 
 export default function ProjectOverviewCard(props) {
-  const {
-    // likes, //! will be using this later to provide ability to have recruiters interact
+  let {
+    likes, //! will be using this later to provide ability to have recruiters interact
     proj_name,
     role,
     linkFor,
@@ -51,9 +52,8 @@ export default function ProjectOverviewCard(props) {
     image
   } = props;
   const [expanded, setExpanded] = React.useState(false);
-  // const [more, setMore] = React.useState(false);
-    // 
   const [liked, setLiked] = React.useState(false)
+  const [likeNum, setLikeNum] = React.useState(likes);
 
   const handleExpandClick = () => {
     setExpanded(!expanded);
@@ -68,7 +68,16 @@ export default function ProjectOverviewCard(props) {
   }
 
   const handleLike = () => {
-    setLiked(!liked);
+    // console.log(likes)
+    let likeNum = likes
+    if (liked === false) {
+      setLiked(!liked);
+      setLikeNum(likeNum + 1)
+    } else {
+      setLiked(!liked);
+      setLikeNum(likes);
+    }
+    console.log(likes)
   }
 
   const abbv = `${proj_name}`.split(' ').map(x => x[0]).join('');
@@ -102,12 +111,14 @@ export default function ProjectOverviewCard(props) {
       />
       <CardActions disableSpacing>
         <LikedProj
-          like={liked}
-          onClick={handleLike}
           aria-checked={liked}
           aria-label='add to favorites'
-        >
-          <FavoriteIcon />
+          like={liked}
+          onClick={handleLike}
+          >
+          <Badge badgeContent={likeNum} color="primary">
+            <FavoriteIcon />
+          </Badge>
         </LikedProj>
 
         <IconButton aria-label="External Link">
