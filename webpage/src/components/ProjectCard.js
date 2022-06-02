@@ -68,7 +68,6 @@ export default function ProjectOverviewCard(props) {
   }
 
   const handleLike = () => {
-    // console.log(likes)
     let likeNum = likes
     if (liked === false) {
       setLiked(!liked);
@@ -77,7 +76,6 @@ export default function ProjectOverviewCard(props) {
       setLiked(!liked);
       setLikeNum(likes);
     }
-    console.log(likes)
   }
 
   const abbv = `${proj_name}`.split(' ').map(x => x[0]).join('');
