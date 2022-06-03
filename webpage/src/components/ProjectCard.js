@@ -36,9 +36,9 @@ const LikedProj = styled((props) => {
   return <IconButton {...other} />;
 })(({ theme, like }) => ({
   color: !like ? 'gray' : red[400],
-  // transition: theme.transitions.create('color', {
+  transition: theme.transitions.create('color', {
   //   transition:
-  // })
+  })
 }));
 
 export default function ProjectOverviewCard(props) {
@@ -85,13 +85,14 @@ export default function ProjectOverviewCard(props) {
     }
   }
 
+  // abbreviations for the Proj tags
   const abbv = `${proj_name}`.split(' ').map(x => x[0]).join('');
 
   return (
     <Card
       sx={{
         minWidth: 345,
-        maxWidth: 1345,
+        maxWidth: '80%',
         margin: '1%',
         color: theme.palette.primary.dark,
         backgroundColor: theme.palette.tertiary.text
