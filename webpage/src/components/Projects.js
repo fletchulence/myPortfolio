@@ -84,7 +84,7 @@ const ProjCardInfo = [
       bullet2: 'Created standardized response codes from backend API endpoints to conform to REST best practices which will carry forward for future developer teams',
       bullet3: 'Revised Jest testing suite to create cohesive test results that better align with response data from user inputs',
       icon_color: theme.palette.tertiary.text,
-      github_link: 'https://github.com/Build-Week-ft-african-marketplace-1/front-end/tree/main/african-marketplace',
+      github_link: 'https://github.com/fletchulence/underdog-devs-be-a#endpoints',
       comments_section: '',
       likes: 20
    },
