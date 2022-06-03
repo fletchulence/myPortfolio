@@ -1,20 +1,22 @@
 import * as React from 'react';
-import { styled } from '@mui/material/styles';
-import Card from '@mui/material/Card';
-import CardHeader from '@mui/material/CardHeader';
-import CardMedia from '@mui/material/CardMedia';
-import CardContent from '@mui/material/CardContent';
-import CardActions from '@mui/material/CardActions';
-import Collapse from '@mui/material/Collapse';
-import { Badge } from '@mui/material';
-import Avatar from '@mui/material/Avatar';
-import IconButton from '@mui/material/IconButton';
-import Typography from '@mui/material/Typography';
+import { styled } from '@mui/material/styles'; //! might want to consider changing this to styledComponents
+import { 
+  Badge,
+  Card,
+  CardHeader,
+  CardMedia,
+  CardContent,
+  CardActions,
+  Collapse,
+  Avatar,
+  IconButton,
+  Typography
+} from '@mui/material';
 import { red } from '@mui/material/colors';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import ExitToAppIcon from '@mui/icons-material/ExitToApp';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import MoreVertIcon from '@mui/icons-material/MoreVert';
+import MoreVertIcon from '@mui/icons-material/MoreVert'
 // own imports
 import theme from '../assets/styles/themes';
 
@@ -45,6 +47,7 @@ export default function ProjectOverviewCard(props) {
     proj_name,
     role,
     linkFor,
+    github_link,
     bullet1,
     bullet2,
     bullet3,
@@ -64,7 +67,11 @@ export default function ProjectOverviewCard(props) {
   }
 
   const handleLinkClick = () => {
-    window.open(linkFor, '_blank')
+    if (linkFor){
+      window.open(linkFor, '_blank')
+    } else if (github_link) {
+      window.open(github_link, '_blank')
+    } else return alert('Link isnt working, please reach out to me via contact link below')
   }
 
   const handleLike = () => {
