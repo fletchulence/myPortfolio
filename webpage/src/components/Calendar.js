@@ -15,6 +15,7 @@ import {
   Paper,
   Card,
 } from '@mui/material';
+import DateCal from './secretComponents/DateCal';
 
 const minDate = new Date('2020-01-01T00:00:00.000');
 const maxDate = new Date('2034-01-01T00:00:00.000');
@@ -61,16 +62,12 @@ export default function SubComponentsPickers() {
           renderInput={(props) => <TextField {...props} margin='normal' label='Date' helperText='valid mask'/> }
         />
       </Grid>
-      <Container>im here
-        <Grid container spacing={0}>
-          <Grid item>
-            <Paper>a;lskdjf</Paper>
-          </Grid>
-          <Paper>
-            helloooo
-          </Paper>
-        </Grid>
-      </Container>
+      <DateCal 
+        date={date}
+        minDate={minDate}
+        maxDate={maxDate}
+        onChange={handleDateChange}
+      />
     </LocalizationProvider>
   );
 }
