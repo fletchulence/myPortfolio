@@ -23,9 +23,9 @@ const maxDate = new Date('2034-01-01T00:00:00.000');
 export default function SubComponentsPickers() {
   const [date, setDate] = useState(new Date());
 
-  const getRandomNumber = (min, max) => {
-    return Math.round(Math.random() * (max - min) + min)
-  }
+  // const getRandomNumber = (min, max) => {
+  //   return Math.round(Math.random() * (max - min) + min)
+  // }
 
   const handleDateChange = (newDateValue) => {
     setDate(newDateValue)
