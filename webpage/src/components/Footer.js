@@ -15,27 +15,36 @@ const GitLogo = styled.div`
   background-repeat: no-repeat;
   background-position: center center;
   width: 20vw;
+    :hover {
+      cursor: pointer;
+    }
   // attribute: 
   // <a href="https://www.flaticon.com/free-icons/github" title="github icons">Github icons created by riajulislam - Flaticon</a>
   `
   
-const LinkedInLogo = styled.div`
+  const LinkedInLogo = styled.div`
   background-image: url(${linkedinLogo});
   width: 20vw;
   height: 10vh;
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center center;
+    :hover {
+      cursor: pointer;
+    }
   `
-  
-const TwitterLogo = styled.div`
+    
+  const TwitterLogo = styled.div`
   background-image: url(${twitterLogo});
   width: 20vw;
   height: 10vh;
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center center;
-`
+    :hover {
+      cursor: pointer;
+    }
+  `
 
 export default function Footer() {
   const handleErrorClick = ()=>{
@@ -51,10 +60,15 @@ export default function Footer() {
   // const navigateTwitter = () => {
   //   window.open('linkFor', '_blank')
   // }
+  // let test = document.getElementById('test')
+  // test.addEventListener('mouseover', function(e){
+  //   console.log(e)
+  // })
+  const logo = document.querySelector('div')
 
   return (
     <>
-      <LinkedInLogo onClick={navigateLinkedIn}/>
+      <LinkedInLogo onClick={navigateLinkedIn} onMouseOver=''/>
       <GitLogo onClick={navigateGithub}/>
       <TwitterLogo onClick={handleErrorClick}/>
     {/* <nav>
@@ -62,9 +76,9 @@ export default function Footer() {
       <a href='https://github.com/fletchulence' target='_blank' rel='noreferrer'>github</a>
     </nav> */}
     <br/>
-      <Typography variant='subtitle2'>
-      <a href="https://www.flaticon.com/free-icons/github" title="github icons">Github icons created by Dave Gandy - Flaticon</a>        <br/>
-      <a href="https://www.flaticon.com/free-icons/twitter" title="twitter icons">Twitter icons created by Google - Flaticon</a>
+      <Typography variant='subtitle3' sx={{ fontSize: 'small' }}>
+        <a href="https://www.flaticon.com/free-icons/github" title="github icons">Github icons created by Dave Gandy - Flaticon</a>        <br/>
+        <a href="https://www.flaticon.com/free-icons/twitter" title="twitter icons">Twitter icons created by Google - Flaticon</a>
       </Typography>
     </>
   )
