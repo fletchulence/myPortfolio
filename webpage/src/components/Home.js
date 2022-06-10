@@ -21,7 +21,7 @@ function Home(props) {
       <Header/>
       <section>
          <WoodBackground>
-            <Typography variant='h3' sx={{ display: 'flex'  }}> Bio: </Typography> 
+            <Typography variant='h3' sx={{ fontWeight:'light' }}> Bio: </Typography> 
             <Bio/>
          </WoodBackground>
          <TreesBackground>

@@ -4,28 +4,37 @@ import React from "react";
 import {
    Container,
    Box,
-   Typography
+   Typography,
 } from '@mui/material';
 
+import BioItems from './BioFOLDER/BioItems';
+
+const BioInfo = [
+   {item: 'why i left sales', contents:'More information here'},
+   {item: ' why i studied mechanical engineering', contents:'More information here'},
+   {item: ' why I learned how to be a developer', contents:'More information here'},
+];
+
 export default function Bio() {
+
+
    return (
       <Container id='Bio' maxWidth='xl'>
          <Box sx={{
-            boxShadow: '10',
-            border:'1px solid white', 
-            borderRadius:'1rem', 
-            display: 'flex', 
-            backgroundColor: "#0000004D", 
-            padding:'2rem',
+            // boxShadow: '10',
+            // border:'1px solid green', 
+            // borderRadius:'15rem', 
+            // backgroundColor: "#0000004D", 
             }}>
-            <Typography variant='h4' sx={{ opacity:'1.2', fontWeight:'medium', color: 'dark'}}>
-               why i left sales
-                  <Typography paragraph> Talk about sales </Typography>
-               why i studied mechanical engineering
-                  <Typography paragraph> Talk about sales </Typography>
-               why I learned how to be a developer
-                  <Typography paragraph> Talk about sales </Typography>
-            </Typography>
+               {
+                  BioInfo.map((el, idx) =>
+                     <BioItems 
+                        key={idx}
+                        item={el.item}
+                        contents={el.contents}
+                     >{el}</BioItems>         
+                  )
+               }
          </Box>
       </Container>
    )
