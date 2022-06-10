@@ -18,7 +18,7 @@ export default function Bio() {
             backgroundColor: "#0000004D", 
             padding:'2rem',
             }}>
-            <Typography variant='h4' sx={{backgroundBlendMode:'difference', opacity:'1.2', fontWeight:'medium', color: 'dark'}}>
+            <Typography variant='h4' sx={{ opacity:'1.2', fontWeight:'medium', color: 'dark'}}>
                why i left sales
                   <Typography paragraph> Talk about sales </Typography>
                why i studied mechanical engineering
