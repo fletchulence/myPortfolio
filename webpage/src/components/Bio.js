@@ -10,9 +10,18 @@ import {
 import BioItems from './BioFOLDER/BioItems';
 
 const BioInfo = [
-   {item: 'why i left sales', contents:'More information here'},
-   {item: ' why i studied mechanical engineering', contents:'More information here'},
-   {item: ' why I learned how to be a developer', contents:'More information here'},
+   {
+      item: ' why i studied mechanical engineering...', 
+      contents:'I liked to build things'
+   },
+   {
+      item: 'why sales wasnt for me...', 
+      contents:'More information here'
+   },
+   {
+      item: ' why I learned how to be a developer...', 
+      contents:'More information here'
+   },
 ];
 
 export default function Bio() {
@@ -20,12 +29,7 @@ export default function Bio() {
 
    return (
       <Container id='Bio' maxWidth='xl'>
-         <Box sx={{
-            // boxShadow: '10',
-            // border:'1px solid green', 
-            // borderRadius:'15rem', 
-            // backgroundColor: "#0000004D", 
-            }}>
+         <Box>
                {
                   BioInfo.map((el, idx) =>
                      <BioItems 
