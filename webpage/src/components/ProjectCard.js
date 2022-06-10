@@ -37,13 +37,13 @@ const LikedProj = styled((props) => {
 })(({ theme, like }) => ({
   color: !like ? 'gray' : red[400],
   transition: theme.transitions.create('color', {
-  //   transition:
+    // transition: 
   })
 }));
 
 export default function ProjectOverviewCard(props) {
   let {
-    likes, //! will be using this later to provide ability to have recruiters interact
+    likes,
     proj_name,
     role,
     linkFor,
@@ -58,9 +58,14 @@ export default function ProjectOverviewCard(props) {
   const [liked, setLiked] = React.useState(false)
   const [likeNum, setLikeNum] = React.useState(likes);
 
+  // this will handle the clicks and the
   const handleExpandClick = () => {
     setExpanded(!expanded);
   };
+
+  const handleClose = () => {
+    setExpanded(false)
+  }
 
   const handleErrorClick = ()=>{
     alert('-- these arent working just yet -- Come back soon for the revamp!')
@@ -131,6 +136,8 @@ export default function ProjectOverviewCard(props) {
           <ExitToAppIcon onClick={handleLinkClick} />
         </IconButton>
         <ExpandMore
+          // telling the expand to close if there is something else clicked
+          onBlur={handleClose}
           expand={expanded}
           onClick={handleExpandClick}
           aria-expanded={expanded}
