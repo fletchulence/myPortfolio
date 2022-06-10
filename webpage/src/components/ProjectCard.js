@@ -31,6 +31,14 @@ const ExpandMore = styled((props) => {
   }),
 }));
 
+const StyledBadge = styled(Badge)({
+  "& .MuiBadge-badge": {
+    backgroundColor: theme.palette.secondary.light,
+    color: "white",
+    // margin: '0px'
+  }
+});
+
 const LikedProj = styled((props) => {
   const { like, ...other } = props
   return <IconButton {...other} />;
@@ -104,7 +112,7 @@ export default function ProjectOverviewCard(props) {
       }}>
       <CardHeader
         avatar={
-          <Avatar sx={{ bgcolor: theme.palette.secondary.light }} aria-label="recipe"> {abbv.slice(0, 2)} </Avatar>
+          <Avatar sx={{ bgcolor: theme.palette.secondary.light, textShadow:`3px 3px ${theme.shadows}` }} aria-label="recipe"> {abbv.slice(0, 2)} </Avatar>
         }
         action={
           <IconButton aria-label="settings">
@@ -127,9 +135,9 @@ export default function ProjectOverviewCard(props) {
           like={liked}
           onClick={handleLike}
           >
-          <Badge badgeContent={likeNum} color="primary">
+          <StyledBadge badgeContent={likeNum}>
             <FavoriteIcon />
-          </Badge>
+          </StyledBadge>
         </LikedProj>
 
         <IconButton aria-label="External Link">

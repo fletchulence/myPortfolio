@@ -1,5 +1,4 @@
 import React, {useState, useEffect} from 'react';
-import { orange } from '@mui/material/colors';
 import { styled } from '@mui/material/styles';
 // here for the icon
 import { 
@@ -16,7 +15,7 @@ const MuiAccordion = styled((props) => (
    <Accordion disableGutters elevation={0} square {...props} />
  ))(({ theme }) => ({
    fontWeight: 'bold',
-   textShadow: `1px 1px #000000`,
+   textShadow: `1px 1px #0000004d`,
     margin: '1%',
    border: `1px solid ${theme.palette.divider}`,
    '&:not(:last-child)': {
@@ -29,7 +28,7 @@ const MuiAccordion = styled((props) => (
 
  const MuiAccordionSummary = styled((props) => (
    <AccordionSummary
-     expandIcon={<ArrowForwardIosSharpIcon sx={{ fontSize: '0.9rem', color: theme.palette.tertiary.text }} />}
+     expandIcon={<ArrowForwardIosSharpIcon sx={{ fontSize: '0.9rem', textShadow:'1px 1px #000000', color: theme.palette.tertiary.text }} />}
      {...props}
    />
  ))(({ theme }) => ({
@@ -63,15 +62,15 @@ export default function ControlledAccordions(props) {
             boxShadow:'3',
             border:'1px solid #DEDEDE4D', 
             borderRadius:'1rem', 
-            backgroundColor: "#00000080", 
+            backgroundColor: "#00000066", 
             color:'inherit' 
          }}>
         <MuiAccordionSummary aria-controls="panel-content" id="panel-header">
-          <Typography variant='' sx={{ width: '100%', fontSize: '1rem' }}>{item}</Typography>
+          <Typography variant='' sx={{ width: '100%', fontSize: '1.2rem' }}>{item}</Typography>
         </MuiAccordionSummary>
         <AccordionDetails>
           <Typography align='center' 
-            sx={{fontWeight:'bold', textShadow: '1px 1px black'}}>
+            sx={{fontWeight:'bold', textShadow: '1px 1px #000000', fontSize:'0.9rem'}}>
               {contents}
           </Typography>
         </AccordionDetails>

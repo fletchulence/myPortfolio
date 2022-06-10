@@ -11,16 +11,19 @@ import BioItems from './BioItems';
 
 const BioInfo = [
    {
-      item: ' why I studied mechanical engineering...', 
-      contents:'more information here'
+      item: ` why I studied mechanical engineering...`, 
+      contents:`I love figuring out how things work. I (along with many engineers I know)
+                  have a full drawer of broken things`
    },
    {
-      item: 'why sales wasnt for me...', 
-      contents:'more information here Lorem ipsum l;kajsdf;klj;alksjdfl;kj ;lkajsdff as;lkdjf ;akljs dfkla '
+      item: `why sales wasnt for me...`, 
+      contents:`I really enjoy working with people. I appreciated the 
+                  exposure that I had to the nuances of shipping and handling.
+                  I learned a lot about the`
    },
    {
-      item: ' why I learned how to be a developer...', 
-      contents:'more information here'
+      item: `why I learned how to be a developer...`, 
+      contents:`more information here`
    },
 ];
 
