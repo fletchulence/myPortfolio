@@ -7,7 +7,7 @@ import {
    Typography,
 } from '@mui/material';
 
-import BioItems from './BioFOLDER/BioItems';
+import BioItems from './BioItems';
 
 const BioInfo = [
    {

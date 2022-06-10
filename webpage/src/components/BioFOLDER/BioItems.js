@@ -1,15 +1,16 @@
 import * as React from 'react';
 import { styled } from '@mui/material/styles';
-// import Accordion from '@mui/material/Accordion';
 // here for the icon
+import { 
+  AccordionDetails, 
+  Typography, 
+  Accordion, 
+  AccordionSummary 
+} from '@mui/material';
 import ArrowForwardIosSharpIcon from '@mui/icons-material/ArrowForwardIosSharp';
-import MuiAccordion from '@mui/material/Accordion';
-import AccordionDetails from '@mui/material/AccordionDetails';
-import MuiAccordionSummary from '@mui/material/AccordionSummary';
-import Typography from '@mui/material/Typography';
 
-const Accordion = styled((props) => (
-   <MuiAccordion disableGutters elevation={0} square {...props} />
+const MuiAccordion = styled((props) => (
+   <Accordion disableGutters elevation={0} square {...props} />
  ))(({ theme }) => ({
     margin: '1%',
    border: `1px solid ${theme.palette.divider}`,
@@ -21,8 +22,8 @@ const Accordion = styled((props) => (
    },
  }));
 
- const AccordionSummary = styled((props) => (
-   <MuiAccordionSummary
+ const MuiAccordionSummary = styled((props) => (
+   <AccordionSummary
      expandIcon={<ArrowForwardIosSharpIcon sx={{ fontSize: '0.9rem', color: '#FFFFFF' }} />}
      {...props}
    />
@@ -33,7 +34,6 @@ const Accordion = styled((props) => (
        : '#0000033',
    flexDirection: 'row-reverse',
    '& .MuiAccordionSummary-expandIconWrapper.Mui-expanded': {
-     color: '#FFFFFF33',
      transform: 'rotate(90deg)',
    },
    '& .MuiAccordionSummary-content': {
@@ -53,7 +53,7 @@ export default function ControlledAccordions(props) {
    };
 
   return (
-      <Accordion square expanded={expanded === 'panel1'} onChange={handleChange('panel1')}
+      <MuiAccordion square expanded={expanded === 'panel'} onChange={handleChange('panel')}
          sx={{ 
             boxShadow:'0',
             border:'1px solid #DEDEDE4D', 
@@ -61,16 +61,16 @@ export default function ControlledAccordions(props) {
             backgroundColor: "#0000004D", 
             color:'inherit' 
          }}>
-        <AccordionSummary aria-controls="panel1d-content" id="panel1d-header">
-          <Typography variant='h4' sx={{ width: '100%', flexShrink: 0 }}>{item}</Typography>
-        </AccordionSummary>
+        <MuiAccordionSummary aria-controls="panel-content" id="panel-header">
+          <Typography variant='' sx={{ width: '100%', fontSize: '1rem' }}>{item}</Typography>
+        </MuiAccordionSummary>
         <AccordionDetails>
           <Typography align='center' 
             sx={{fontWeight:'bold', textShadow: '2px 2px #0000004D'}}>
               {contents}
           </Typography>
         </AccordionDetails>
-      </Accordion>
+      </MuiAccordion>
    
   );
 }

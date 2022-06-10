@@ -1,7 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 // import { Link } from 'react-router-dom';
-import Button from '@mui/material/Button';
 import { StyledHeader } from '../assets/styles/StyledComponents';
 import theme from '../assets/styles/themes';
 //todo: look up how to change the themes on the buttons

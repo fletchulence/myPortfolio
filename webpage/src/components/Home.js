@@ -8,8 +8,8 @@ import theme from './../assets/styles/themes';
 import Header from './Header';
 import Footer from './Footer';
 import Projects from './Projects';
-import Typography from '@mui/material/Typography';
-import Bio from './Bio';
+import {Typography} from '@mui/material';
+import Bio from './BioFOLDER/Bio';
 import { Loading } from './secretComponents/Loading';
 import { TreesBackground, StyledFooter, WoodBackground } from './../assets/styles/StyledComponents';
 

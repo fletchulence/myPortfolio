@@ -18,9 +18,9 @@ const TreesBackground = styled.div`
    height: auto;
    background-attachment: fixed;
    background-image: url(${treesBackground});
-   background-size: cover;
-   align-self: center;
-   justify-content: center;
+   background-size: contain;
+   // align-self: center;
+   // justify-content: center;
    `
 
 const WoodBackground = styled.div`
@@ -30,9 +30,9 @@ const WoodBackground = styled.div`
    height: auto;
    background-attachment: fixed;
    background-image: url(${woodBackground});
-   background-size: cover;
-   align-self: center;
-   justify-content: center;
+   background-size: contain;
+   // align-self: center;
+   // justify-content: center;
 `
 
 const StyledButton = styled.button`
