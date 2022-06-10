@@ -21,19 +21,17 @@ import {
 //todo: add alt txt for the imgs
 const ProjCardInfo = [
    {
-      proj_name: 'Anywhere Fitness',
-      role: 'Backend Developer',
-      image: anywhere_thumb,
-      linkFor: 'https://front-end-chi-livid.vercel.app/',
-      bullet1: `● Single-handedly created responsive React platform and designed backend PostgreSQL database for app that enables
-      fitness instructors and students to schedule classes`,
-      bullet2: `● Developed Node.js backend of student attendance punch pass system to enable students to track class-specific
-      progress using Knex to seed and populate tables and Express to generate endpoints for frontend hooks`,
-      bullet3: '● Assisted Frontend with state and Axios calls to my Heroku database to ensure correct data pull-through',
-      icon_color: '#ef5350',
-      github_link: 'https://github.com/Build-Week-Anywhere-Fitness-6-2021',
+      proj_name: 'Underdog Devs',
+      role: 'Backend Engineer',
+      image: underdog_thumb,
+      linkFor: '',
+      bullet1: '● Collaborated with multiple teams on overall coding standards and testing suites within mentor-driven software development trade school for recently incarcerated individuals',
+      bullet2: '● Created standardized response codes from backend API endpoints to conform to REST best practices which will carry forward for future developer teams',
+      bullet3: '● Revised Jest testing suite to create cohesive test results that better align with response data from user inputs',
+      icon_color: theme.palette.tertiary.text,
+      github_link: 'https://github.com/fletchulence/underdog-devs-be-a#endpoints',
       comments_section: '',
-      likes: 25,
+      likes: 20
    },
    {
       proj_name: 'Potluck Planner',
@@ -76,17 +74,19 @@ const ProjCardInfo = [
       likes: 4
    },
    {
-      proj_name: 'Underdog Devs',
-      role: 'Backend Engineer',
-      image: underdog_thumb,
-      linkFor: '',
-      bullet1: '● Collaborated with multiple teams on overall coding standards and testing suites within mentor-driven software development trade school for recently incarcerated individuals',
-      bullet2: '● Created standardized response codes from backend API endpoints to conform to REST best practices which will carry forward for future developer teams',
-      bullet3: '● Revised Jest testing suite to create cohesive test results that better align with response data from user inputs',
-      icon_color: theme.palette.tertiary.text,
-      github_link: 'https://github.com/fletchulence/underdog-devs-be-a#endpoints',
+      proj_name: 'Anywhere Fitness',
+      role: 'Backend Developer',
+      image: anywhere_thumb,
+      linkFor: 'https://front-end-chi-livid.vercel.app/',
+      bullet1: `● Single-handedly created responsive React platform and designed backend PostgreSQL database for app that enables
+      fitness instructors and students to schedule classes`,
+      bullet2: `● Developed Node.js backend of student attendance punch pass system to enable students to track class-specific
+      progress using Knex to seed and populate tables and Express to generate endpoints for frontend hooks`,
+      bullet3: '● Assisted Frontend with state and Axios calls to my Heroku database to ensure correct data pull-through',
+      icon_color: '#ef5350',
+      github_link: 'https://github.com/Build-Week-Anywhere-Fitness-6-2021',
       comments_section: '',
-      likes: 20
+      likes: 25,
    },
 ]
 

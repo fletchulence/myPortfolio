@@ -30,7 +30,7 @@ const WoodBackground = styled.div`
    height: auto;
    background-attachment: fixed;
    background-image: url(${woodBackground});
-   background-size: contain;
+   background-size: cover;
    // align-self: center;
    // justify-content: center;
 `

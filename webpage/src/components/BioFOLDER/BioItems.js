@@ -1,4 +1,5 @@
-import * as React from 'react';
+import React, {useState, useEffect} from 'react';
+import { orange } from '@mui/material/colors';
 import { styled } from '@mui/material/styles';
 // here for the icon
 import { 
@@ -9,9 +10,13 @@ import {
 } from '@mui/material';
 import ArrowForwardIosSharpIcon from '@mui/icons-material/ArrowForwardIosSharp';
 
+import theme from '../../assets/styles/themes';
+
 const MuiAccordion = styled((props) => (
    <Accordion disableGutters elevation={0} square {...props} />
  ))(({ theme }) => ({
+   fontWeight: 'bold',
+   textShadow: `1px 1px #000000`,
     margin: '1%',
    border: `1px solid ${theme.palette.divider}`,
    '&:not(:last-child)': {
@@ -24,7 +29,7 @@ const MuiAccordion = styled((props) => (
 
  const MuiAccordionSummary = styled((props) => (
    <AccordionSummary
-     expandIcon={<ArrowForwardIosSharpIcon sx={{ fontSize: '0.9rem', color: '#FFFFFF' }} />}
+     expandIcon={<ArrowForwardIosSharpIcon sx={{ fontSize: '0.9rem', color: theme.palette.tertiary.text }} />}
      {...props}
    />
  ))(({ theme }) => ({
@@ -46,7 +51,7 @@ export default function ControlledAccordions(props) {
       item,
       contents
    } = props 
-   const [expanded, setExpanded] = React.useState(false);
+   const [expanded, setExpanded] = useState(false);
 
    const handleChange = (panel) => (event, isExpanded) => {
       setExpanded(isExpanded ? panel : false);
@@ -55,10 +60,10 @@ export default function ControlledAccordions(props) {
   return (
       <MuiAccordion square expanded={expanded === 'panel'} onChange={handleChange('panel')}
          sx={{ 
-            boxShadow:'0',
+            boxShadow:'3',
             border:'1px solid #DEDEDE4D', 
             borderRadius:'1rem', 
-            backgroundColor: "#0000004D", 
+            backgroundColor: "#00000080", 
             color:'inherit' 
          }}>
         <MuiAccordionSummary aria-controls="panel-content" id="panel-header">
@@ -66,7 +71,7 @@ export default function ControlledAccordions(props) {
         </MuiAccordionSummary>
         <AccordionDetails>
           <Typography align='center' 
-            sx={{fontWeight:'bold', textShadow: '2px 2px #0000004D'}}>
+            sx={{fontWeight:'bold', textShadow: '1px 1px black'}}>
               {contents}
           </Typography>
         </AccordionDetails>
