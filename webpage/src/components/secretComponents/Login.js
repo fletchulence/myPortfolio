@@ -20,13 +20,19 @@ export default function Login(props) {
    
    function handleSubmit(evt) {
       evt.preventDefault();
-      if (state.fullname === 'debra' && state.password === 'fletcher') {
+      if (state.fullname === 'Debra' && state.password === 'Fletcher') {
          navigate('/fish')
       } else {
          alert('Seems you entered your Name and Password wrong! Try again, please');
          setState(initialFormVals)
       }
    };
+
+   function handleLink(evt){
+      // evt.preventDefault();
+      navigate('/')
+   }
+
    // route to the protected
   return (
     <>
@@ -53,6 +59,7 @@ export default function Login(props) {
          </label>
          <input type="submit" value='Submit'/>
       </form>
+      <button onClick={handleLink}>Home</button>
     </>
   )
 }

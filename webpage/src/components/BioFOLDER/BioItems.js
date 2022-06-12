@@ -57,6 +57,7 @@ export default function ControlledAccordions(props) {
    };
 
   return (
+    <>
       <MuiAccordion square expanded={expanded === 'panel'} onChange={handleChange('panel')}
          sx={{ 
             boxShadow:'3',
@@ -65,8 +66,8 @@ export default function ControlledAccordions(props) {
             backgroundColor: "#00000066", 
             color:'inherit' 
          }}>
-        <MuiAccordionSummary aria-controls="panel-content" id="panel-header">
-          <Typography variant='' sx={{ width: '100%', fontSize: '1.2rem' }}>{item}</Typography>
+        <MuiAccordionSummary onBlur={handleChange(!expanded)} aria-controls="panel-content" id="panel-header">
+          <Typography variant='paragraph' sx={{ width: '100%', fontSize: '1.2rem' }}>{item}</Typography>
         </MuiAccordionSummary>
         <AccordionDetails>
           <Typography align='center' 
@@ -75,6 +76,6 @@ export default function ControlledAccordions(props) {
           </Typography>
         </AccordionDetails>
       </MuiAccordion>
-   
+    </>
   );
 }

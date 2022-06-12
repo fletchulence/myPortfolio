@@ -19,11 +19,17 @@ const BioInfo = [
       item: `why sales wasnt for me...`, 
       contents:`I really enjoy working with people. I appreciated the 
                   exposure that I had to the nuances of shipping and handling.
-                  I learned a lot about the`
+                  I learned a lot about the importance of knowing your customers
+                  as well as your support staff.`
    },
    {
       item: `why I learned how to be a developer...`, 
-      contents:`more information here`
+      contents:`I want to help people put their ideas to life. I understand now 
+                  many more things that i didnt before and i am constantly learning more
+                  
+                  `
+                  // perhaps add link to what else you learned somewhere
+
    },
 ];
 
