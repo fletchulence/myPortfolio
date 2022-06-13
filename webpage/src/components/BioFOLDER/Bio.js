@@ -37,7 +37,7 @@ export default function Bio() {
 
 
    return (
-      <Container id='Bio' maxWidth='xl'>
+      <Container id='Bio'>
          <Box>
                {
                   BioInfo.map((el, idx) =>

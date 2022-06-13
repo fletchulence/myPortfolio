@@ -96,11 +96,11 @@ const ProjCardInfo = [
 
 function Projects() {
    return (
-      <Container sx={{
-            display: 'flex',
-            justifyContent: 'center',
-            outline: theme.palette.primary.main.text,
-         }} >
+      <Container id='Projects' sx={{
+            // display: 'flex',
+            // justifyContent: 'center',
+            // border: theme.palette.primary.main,
+         }}>
          <Box sx={{
             display: 'flex',
             flexFlow: 'row wrap',

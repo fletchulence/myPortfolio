@@ -17,19 +17,31 @@ const TreesBackground = styled.div`
    width: 100%;
    height: auto;
    background-attachment: fixed;
-   background-image: url(${treesBackground});
+   background-repeat: repeat-y;
    background-size: contain;
+   background-image: url(${treesBackground});
+   @media (${theme.breakpoints.tabletS}){
+      background-repeat: repeat;
+      background-size: cover;
+      
+   }
    `
-
-const WoodBackground = styled.div`
+   
+   const WoodBackground = styled.div`
    margin: 0;
    padding: 5%;
    width: 100%;
-   height: 100%;
+   height: auto;
    background-attachment: fixed;
+   background-repeat: repeat-y;
    background-size: contain;
    background-image: url(${woodBackground});
-`
+   @media (${theme.breakpoints.tabletS}){
+      background-size: cover;
+      background-repeat: no-repeat;
+      
+   }
+   `
 
 const StyledButton = styled.button`
    
