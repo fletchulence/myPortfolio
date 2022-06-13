@@ -107,21 +107,23 @@ export default function ProjectOverviewCard(props) {
         minWidth: 345,
         maxWidth: '80%',
         margin: '1%',
-        color: theme.palette.primary.dark,
+        fontWeight: 'bold',
+        color: theme.palette.primary.light,
         backgroundColor: theme.palette.tertiary.text
       }}>
-      <CardHeader
+      <CardHeader /* sx={{ fontWeight: 'bold' }} */
         avatar={
-          <Avatar sx={{ bgcolor: theme.palette.secondary.light, textShadow:`3px 3px ${theme.shadows}` }} aria-label="recipe"> {abbv.slice(0, 2)} </Avatar>
+          <Avatar sx={{ bgcolor: theme.palette.secondary.light, /* textShadow:`1px 1px ${theme.palette.primary.dark}` */ }} aria-label="recipe"> {abbv.slice(0, 2)} </Avatar>
         }
         action={
           <IconButton aria-label="settings">
             <MoreVertIcon onClick={handleErrorClick} /* //todo:make a modal to open for viewing more options  */ />
           </IconButton>
         }
+        titleTypographyProps={{ fontWeight: 'bold' }}
         title={proj_name}
         subheader={`Role: ${role}`}
-      />
+      /> 
       <CardMedia
         component="img"
         height="200"

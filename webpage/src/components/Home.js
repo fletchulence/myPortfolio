@@ -20,12 +20,12 @@ function Home(props) {
       <Header/>
       <section>
          <WoodBackground>
-            <Typography variant='h3' sx={{ fontWeight:'regular', textShadow: '2px 2px #0000004d /* #2e170a4D */' }}> Bio: </Typography> 
+            <Typography variant='h3' sx={{ fontWeight:'regular', textShadow: '2px 2px #0000004d' /* #2e170a4D */ }}> Bio: </Typography> 
             <Bio/>
          </WoodBackground>
          <TreesBackground>
             <Typography variant='h3' sx={{ textShadow: '2px 2px #00000080' }}> Projects: </Typography> 
-            <Projects sx={{ border: theme.palette.primary.borders }}/>
+            <Projects /* sx={{ }} *//>
          </TreesBackground>
       </section>
       <StyledFooter>
