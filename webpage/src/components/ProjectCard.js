@@ -122,7 +122,7 @@ export default function ProjectOverviewCard(props) {
         }
         titleTypographyProps={{ fontWeight: 'bold' }}
         title={proj_name}
-        subheader={`Role: ${role}`}
+        subheader={`${role}`}
       /> 
       <CardMedia
         component="img"
