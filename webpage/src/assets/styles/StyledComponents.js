@@ -19,23 +19,16 @@ const TreesBackground = styled.div`
    background-attachment: fixed;
    background-image: url(${treesBackground});
    background-size: contain;
-   // align-self: center;
-   // justify-content: center;
    `
 
 const WoodBackground = styled.div`
-   display: flex;
-
    margin: 0;
    padding: 5%;
    width: 100%;
-   height: auto;
+   height: 100%;
    background-attachment: fixed;
-   background-size: cover;
+   background-size: contain;
    background-image: url(${woodBackground});
-   // align-self: center;
-   flex-flow: row wrap;
-   // justify-content: center;
 `
 
 const StyledButton = styled.button`
