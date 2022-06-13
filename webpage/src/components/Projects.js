@@ -18,11 +18,15 @@ import {
    Container 
 } from '@mui/material';
 
+// const anywhere_thumb = React.lazy(() => import('../assets/images/anywhere_dashboard1.webp'));
+// const potluck_thumb = React.lazy(() => import('../assets/images/potluck_home.webp'));
+// const
+
 //todo: add alt txt for the imgs
 const ProjCardInfo = [
    {
-      proj_name: 'Underdog Devs',
-      role: 'Backend Engineer',
+      proj_name: 'HumanRights First',
+      role: 'Backend Developer',
       image: underdog_thumb,
       linkFor: '',
       bullet1: '● Collaborated with multiple teams on overall coding standards and testing suites within mentor-driven software development trade school for recently incarcerated individuals',
@@ -62,7 +66,7 @@ const ProjCardInfo = [
    },
    {
       proj_name: 'African Marketplace',
-      role: 'Creator',
+      role: 'Frontend Developer',
       image: african_mp,
       linkFor: '',
       bullet1: '● This was my First experience working on a team and with github',
@@ -75,7 +79,7 @@ const ProjCardInfo = [
    },
    {
       proj_name: 'Anywhere Fitness',
-      role: 'Backend Developer',
+      role: 'Full Stack Developer',
       image: anywhere_thumb,
       linkFor: 'https://front-end-chi-livid.vercel.app/',
       bullet1: `● Single-handedly created responsive React platform and designed backend PostgreSQL database for app that enables
@@ -103,6 +107,7 @@ function Projects() {
             justifyContent: 'space-around',
             alignSelf: 'center',
          }}>
+            {/* <Suspense fallback= {<>...Loading</>}> */}
             {ProjCardInfo.map((el, idx) =>
                <ProjCard
                   key={idx}
@@ -117,8 +122,11 @@ function Projects() {
                   github_link={el.github_link}
                > 
                   {el} 
+
                </ProjCard>
-            )}
+               
+               )}
+               {/* </Suspense> */}
          </Box>
       </Container>
    )

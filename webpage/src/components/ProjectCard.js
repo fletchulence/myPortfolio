@@ -104,74 +104,70 @@ export default function ProjectOverviewCard(props) {
   return (
     <>
       <Suspense fallback={<div>Loading...</div>}>
-        {/* <OtherComponent /> */}
+        <Card
+          sx={{
+            minWidth: 345,
+            maxWidth: '80%',
+            margin: '1%',
+            color: theme.palette.primary.dark,
+            backgroundColor: theme.palette.tertiary.text
+          }}>
+          <CardHeader /* sx={{ fontWeight: 'bold' }} */
+            avatar={
+              <Avatar sx={{ bgcolor: theme.palette.secondary.light, /* textShadow:`1px 1px ${theme.palette.primary.dark}` */ }} aria-label="recipe"> {abbv.slice(0, 2)} </Avatar>
+            }
+            action={
+              <IconButton aria-label="settings" onClick={handleErrorClick}>
+                <MoreVertIcon  /* //todo:make a modal to open for viewing more options  */ />
+              </IconButton>
+            }
+            titleTypographyProps={{ fontWeight: 'medium' }}
+            title={proj_name}
+            subheader={`${role}`}
+          /> 
+          <CardMedia
+            component="img"
+            height="200"
+            image={image}
+            alt="Potluck Planner Project"
+          />
+          <CardActions disableSpacing>
+            <LikedProj
+              aria-checked={liked}
+              aria-label='add to favorites'
+              like={liked}
+              onClick={handleLike}
+              >
+              <StyledBadge badgeContent={likeNum}>
+                <FavoriteIcon />
+              </StyledBadge>
+            </LikedProj>
 
-  
-    <Card
-      sx={{
-        minWidth: 345,
-        maxWidth: '80%',
-        margin: '1%',
-        fontWeight: 'bold',
-        color: theme.palette.primary.light,
-        backgroundColor: theme.palette.tertiary.text
-      }}>
-      <CardHeader /* sx={{ fontWeight: 'bold' }} */
-        avatar={
-          <Avatar sx={{ bgcolor: theme.palette.secondary.light, /* textShadow:`1px 1px ${theme.palette.primary.dark}` */ }} aria-label="recipe"> {abbv.slice(0, 2)} </Avatar>
-        }
-        action={
-          <IconButton aria-label="settings" onClick={handleErrorClick}>
-            <MoreVertIcon  /* //todo:make a modal to open for viewing more options  */ />
-          </IconButton>
-        }
-        titleTypographyProps={{ fontWeight: 'bold' }}
-        title={proj_name}
-        subheader={`${role}`}
-      /> 
-      <CardMedia
-        component="img"
-        height="200"
-        image={image}
-        alt="Potluck Planner Project"
-      />
-      <CardActions disableSpacing>
-        <LikedProj
-          aria-checked={liked}
-          aria-label='add to favorites'
-          like={liked}
-          onClick={handleLike}
-          >
-          <StyledBadge badgeContent={likeNum}>
-            <FavoriteIcon />
-          </StyledBadge>
-        </LikedProj>
-
-        {/* for the app link icon */}
-        <IconButton aria-label="External Link" onClick={handleLinkClick} >
-          <ExitToAppIcon />
-        </IconButton>
-        <ExpandMore
-          // telling the expand to close if there is something else clicked
-          onBlur={handleClose}
-          expand={expanded}
-          onClick={handleExpandClick}
-          aria-expanded={expanded}
-          aria-label="show more"
-        >
-          <ExpandMoreIcon />
-        </ExpandMore>
-      </CardActions>
-      <Collapse in={expanded} timeout="auto" unmountOnExit>
-        <CardContent>
-          <Typography variant='h4'>Notables:</Typography>
-          <Typography variant='inherit'> {bullet1} </Typography>
-          <Typography variant='inherit'> {bullet2} </Typography>
-          <Typography variant='inherit'> {bullet3} </Typography>
-        </CardContent>
-      </Collapse>
-    </Card>
-  </Suspense>
-  </>
+            {/* for the app link icon */}
+            <IconButton aria-label="External Link" onClick={handleLinkClick} >
+              <ExitToAppIcon />
+            </IconButton>
+            <ExpandMore
+              // telling the expand to close if there is something else clicked
+              onBlur={handleClose}
+              expand={expanded}
+              onClick={handleExpandClick}
+              aria-expanded={expanded}
+              aria-label="show more"
+            >
+              <ExpandMoreIcon />
+            </ExpandMore>
+          </CardActions>
+          <Collapse in={expanded} timeout="auto" unmountOnExit>
+            <CardContent>
+              <Typography variant='h4'>Notables:</Typography>
+              <Typography variant='inherit'> {bullet1} </Typography>
+              <Typography variant='inherit'> {bullet2} </Typography>
+              <Typography variant='inherit'> {bullet3} </Typography>
+            </CardContent>
+          </Collapse>
+        </Card>
+      </Suspense>
+    </>
   );
 }
