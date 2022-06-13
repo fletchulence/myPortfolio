@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React, { Suspense } from 'react';
 import { styled } from '@mui/material/styles'; //! might want to consider changing this to styledComponents
 import { 
   Badge,
@@ -102,6 +102,11 @@ export default function ProjectOverviewCard(props) {
   const abbv = `${proj_name}`.split(' ').map(x => x[0]).join('');
 
   return (
+    <>
+      <Suspense fallback={<div>Loading...</div>}>
+        {/* <OtherComponent /> */}
+
+  
     <Card
       sx={{
         minWidth: 345,
@@ -116,8 +121,8 @@ export default function ProjectOverviewCard(props) {
           <Avatar sx={{ bgcolor: theme.palette.secondary.light, /* textShadow:`1px 1px ${theme.palette.primary.dark}` */ }} aria-label="recipe"> {abbv.slice(0, 2)} </Avatar>
         }
         action={
-          <IconButton aria-label="settings">
-            <MoreVertIcon onClick={handleErrorClick} /* //todo:make a modal to open for viewing more options  */ />
+          <IconButton aria-label="settings" onClick={handleErrorClick}>
+            <MoreVertIcon  /* //todo:make a modal to open for viewing more options  */ />
           </IconButton>
         }
         titleTypographyProps={{ fontWeight: 'bold' }}
@@ -142,8 +147,9 @@ export default function ProjectOverviewCard(props) {
           </StyledBadge>
         </LikedProj>
 
-        <IconButton aria-label="External Link">
-          <ExitToAppIcon onClick={handleLinkClick} />
+        {/* for the app link icon */}
+        <IconButton aria-label="External Link" onClick={handleLinkClick} >
+          <ExitToAppIcon />
         </IconButton>
         <ExpandMore
           // telling the expand to close if there is something else clicked
@@ -165,5 +171,7 @@ export default function ProjectOverviewCard(props) {
         </CardContent>
       </Collapse>
     </Card>
+  </Suspense>
+  </>
   );
 }
