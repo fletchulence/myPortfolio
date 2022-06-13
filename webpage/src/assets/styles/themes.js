@@ -7,8 +7,8 @@ const theme = createTheme({
     type: 'dark',
     primary: {
       main: green[900],
-      text: green[50],
-      borders: green.A100
+      text: '#014421',
+      borders: green.A100,
     },
     secondary: {
       main: blue.A100,
