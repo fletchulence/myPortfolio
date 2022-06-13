@@ -43,10 +43,10 @@ const Header = (props) => {
          top: `0`,
          height: `auto`,
          width: `100%`,
-         backgroundImage: `linear-gradient(#40afaf, ${theme.palette.primary.light})`,
+         backgroundImage: `linear-gradient(${theme.palette.secondary.light}, ${theme.palette.primary.light})`,
       }}>
          <StyledHeader>
-            <Typography variant='h1' display={'flex'} sx={{ textShadow: '2px 2px #00000033' }}>
+            <Typography variant='h1' display={'flex'} sx={{ padding:'2%', textShadow: '2px 2px #00000033' }}>
                David A. Fletcher
             </Typography>
             {/* <Button href='/' variant='outlined'> home </Button>

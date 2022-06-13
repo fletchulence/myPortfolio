@@ -24,14 +24,17 @@ const TreesBackground = styled.div`
    `
 
 const WoodBackground = styled.div`
+   display: flex;
+
    margin: 0;
    padding: 5%;
    width: 100%;
    height: auto;
    background-attachment: fixed;
-   background-image: url(${woodBackground});
    background-size: cover;
+   background-image: url(${woodBackground});
    // align-self: center;
+   flex-flow: row wrap;
    // justify-content: center;
 `
 
@@ -48,9 +51,9 @@ const StyledFooter = styled.footer`
     height: auto;
     margin: 0;
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     flex-flow: row wrap;
-    background-image: linear-gradient( ${theme.palette.primary.light}, #40afaf);
+    background-image: linear-gradient( ${theme.palette.primary.light}, ${theme.palette.secondary.light});
     padding: 5%;
 `
 

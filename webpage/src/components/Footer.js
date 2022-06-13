@@ -5,7 +5,7 @@ import linkedinLogo from './../assets/icons/linkedinlogo.webp'
 import twitterLogo from './../assets/icons/twitterLogo.webp'
 
 //MUI
-import { Typography } from '@mui/material';
+import { Typography, Box } from '@mui/material';
 
 const GitLogo = styled.div`
   background-image: url(${gitLogo});
@@ -68,15 +68,12 @@ export default function Footer() {
 
   return (
     <>
-      <LinkedInLogo onClick={navigateLinkedIn} onMouseOver=''/>
-      <GitLogo onClick={navigateGithub}/>
-      <TwitterLogo onClick={handleErrorClick}/>
-    {/* <nav>
-      <a href='https://www.linkedin.com/in/david-a-fletcher/' target='_blank' rel='noreferrer'> LinkedIn </a>
-      <a href='https://github.com/fletchulence' target='_blank' rel='noreferrer'>github</a>
-    </nav> */}
-    <br/>
-      <Typography variant='subtitle3' sx={{ fontSize: 'small' }}>
+      <Box sx={{ display: 'flex', flexDirection: 'row nowrap', justifyContent: 'space-around', width: '100%'}}>
+        <LinkedInLogo onClick={navigateLinkedIn}/>
+        <GitLogo onClick={navigateGithub}/>
+        <TwitterLogo onClick={handleErrorClick}/>
+      </Box>
+      <Typography variant='subtitle3' sx={{ fontSize: 7 }}>
         <a href="https://www.flaticon.com/free-icons/github" title="github icons">Github icons created by Dave Gandy - Flaticon</a>        <br/>
         <a href="https://www.flaticon.com/free-icons/twitter" title="twitter icons">Twitter icons created by Google - Flaticon</a>
       </Typography>
