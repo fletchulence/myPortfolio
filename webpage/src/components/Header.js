@@ -44,17 +44,14 @@ const Header = (props) => {
          height: `auto`,
          width: `100%`,
          backgroundImage: `linear-gradient(${theme.palette.secondary.light}, ${theme.palette.primary.light})`,
-      }}>
-         <StyledHeader>
-            <Typography variant='h1' display={'flex'} sx={{ padding:'2%', textShadow: '2px 2px #00000033' }}>
-               David A. Fletcher
-            </Typography>
-            {/* <Button href='/' variant='outlined'> home </Button>
-            <Button href='/#Projects' variant='outlined'> expertise </Button>
-            <Button href='/#Bio' variant='outlined'> BIO </Button> */}
-         </StyledHeader>
-            <PhishingIcon onClick={()=> handleFish()}> </PhishingIcon>
-    </Box>
+       }}>
+        <StyledHeader>
+           <Typography variant='h1' display={'flex'} sx={{ padding:'2%', textShadow: '2px 2px #00000033' }}>
+             David A. Fletcher
+           </Typography>
+        </StyledHeader>
+        <PhishingIcon onClick={()=> handleFish()}> </PhishingIcon>
+      </Box>
    )
 }
 
