@@ -57,9 +57,9 @@ export default function Footer() {
   const navigateGithub = () => {
     window.open('https://github.com/fletchulence', '_blank')
   }
-  // const navigateTwitter = () => {
-  //   window.open('linkFor', '_blank')
-  // }
+  const navigateTwitter = () => {
+    window.open('https://twitter.com/David_aFletcher', '_blank')
+  }
   // let test = document.getElementById('test')
   // test.addEventListener('mouseover', function(e){
   //   console.log(e)
@@ -71,7 +71,7 @@ export default function Footer() {
       <Box sx={{ display: 'flex', flexDirection: 'row nowrap', justifyContent: 'space-around', width: '100%'}}>
         <LinkedInLogo onClick={navigateLinkedIn}/>
         <GitLogo onClick={navigateGithub}/>
-        <TwitterLogo onClick={handleErrorClick}/>
+        <TwitterLogo onClick={navigateTwitter}/>
       </Box>
       <Typography variant='subtitle3' sx={{ fontSize: 7 }}>
         <a href="https://www.flaticon.com/free-icons/github" title="github icons">Github icons created by Dave Gandy - Flaticon</a>        <br/>
