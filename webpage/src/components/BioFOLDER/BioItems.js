@@ -63,7 +63,7 @@ export default function ControlledAccordions(props) {
             boxShadow:'3',
             border:'1px solid #DEDEDE4D', 
             borderRadius:'1rem', 
-            backgroundColor: "#00000066", 
+            backgroundColor: "#00000090", 
             color:'inherit' 
          }}>
         <MuiAccordionSummary onBlur={handleChange(!expanded)} aria-controls="panel-content" id="panel-header">
