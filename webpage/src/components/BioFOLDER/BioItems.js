@@ -16,11 +16,11 @@ const MuiAccordion = styled((props) => (
  ))(({ theme }) => ({
    fontWeight: 'bold',
    textShadow: `1px 1px #0000004d`,
-    margin: '1%',
+    margin: '1.5%',
    border: `1px solid ${theme.palette.divider}`,
-   '&:not(:last-child)': {
-     borderBottom: 0,
-   },
+  //  '&:not(:last-child)': {  //? to make the blocks 
+  //    borderBottom: 0,
+  //  },
    '&:before': {
      display: 'none',
    },
@@ -61,17 +61,17 @@ export default function ControlledAccordions(props) {
       <MuiAccordion square expanded={expanded === 'panel'} onChange={handleChange('panel')}
          sx={{ 
             boxShadow:'3',
-            border:'1px solid #DEDEDE4D', 
+            border:`1px solid ${theme.palette.tertiary.text}90`, 
             borderRadius:'1rem', 
             backgroundColor: "#00000090", 
             color:'inherit' 
          }}>
-        <MuiAccordionSummary onBlur={handleChange(!expanded)} aria-controls="panel-content" id="panel-header">
-          <Typography variant='paragraph' sx={{ width: '100%', fontSize: '1.2rem' }}>{item}</Typography>
+        <MuiAccordionSummary /* onBlur={handleChange(!expanded)} */ aria-controls="panel-content" id="panel-header">
+          <Typography variant='paragraph' sx={{ width: '100%', fontSize: '1.25rem' }}>{item}</Typography>
         </MuiAccordionSummary>
         <AccordionDetails>
           <Typography align='center' 
-            sx={{fontWeight:'bold', textShadow: '1px 1px #000000', fontSize:'0.9rem'}}>
+            sx={{fontWeight:'bold', textShadow: '1px 1px #000000', fontSize:'0.98rem'}}>
               {contents}
           </Typography>
         </AccordionDetails>
