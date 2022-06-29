@@ -56,9 +56,9 @@ export default function ProjectOverviewCard(props) {
     role,
     linkFor,
     github_link,
-    bullet1,
-    bullet2,
-    bullet3,
+    bullets,
+    // bullet2,
+    // bullet3,
     // icon_color, //! unused for the purposes of styling -- might change later
     image
   } = props;
@@ -126,6 +126,7 @@ export default function ProjectOverviewCard(props) {
             subheader={`${role}`}
           /> 
           <CardMedia
+            onClick={handleExpandClick}
             component="img"
             height="200"
             image={image}
@@ -149,7 +150,7 @@ export default function ProjectOverviewCard(props) {
             </IconButton>
             <ExpandMore
               // telling the expand to close if there is something else clicked
-              onBlur={handleClose}
+              // onBlur={handleClose}
               expand={expanded}
               onClick={handleExpandClick}
               aria-expanded={expanded}
@@ -161,9 +162,14 @@ export default function ProjectOverviewCard(props) {
           <Collapse in={expanded} timeout="auto" unmountOnExit>
             <CardContent>
               <Typography variant='h4'>Notables:</Typography>
-              <Typography variant='inherit'> {bullet1} </Typography>
-              <Typography variant='inherit'> {bullet2} </Typography>
-              <Typography variant='inherit'> {bullet3} </Typography>
+              <Typography variant='body1'
+                sx={{ 
+                  marginRight: '8%', 
+                  // border: '1px solid green'
+                }}
+              > {bullets} </Typography>
+              {/* <Typography variant='inherit'> {bullet2} </Typography>
+              <Typography variant='inherit'> {bullet3} </Typography> */}
             </CardContent>
           </Collapse>
         </Card>
