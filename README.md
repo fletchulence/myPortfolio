@@ -4,18 +4,17 @@
 
 ### Backend:
   - New Idea Scratchpad (create)
-    - [X ] save likes, role sign-in
+    - [ ] save likes, role sign-in
       - [ ] role of 'recruiter'
       - [ ] user info will not be mandatory
   - Issues [link](https://github.com/fletchulence/myPortfolio/issues)
     - laziness of developer
 ### Frontend:
   - New Idea Scratchpad
-    - [X ] open to suggestions
+    - [X] open to suggestions
   - Issues [link](https://github.com/fletchulence/myPortfolio/issues)
     - [ ] Accordian content causes too long of dropdown
     - [ ] Project content causes too long of dropdown
-    - [ ] 
 
   
 
