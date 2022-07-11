@@ -19,7 +19,8 @@
 
   
 
-<img alt="AppVeyor" src="https://img.shields.io/appveyor/build/flechulence/myPortfolio?style=for-the-badge">
+<img alt="success" src="https://img.shields.io/badge/build-success-brightgreen">
+
 
 # How to look around:
 
