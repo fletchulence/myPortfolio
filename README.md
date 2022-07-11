@@ -2,12 +2,13 @@
 
 ## Still in Dev Phases:
 
-### Backend:
+### Backend: 
+[backend repo](https://github.com/fletchulence/webpage-back-end)
   - New Idea Scratchpad (create)
     - [ ] save likes, role sign-in
-      - [ ] role of 'recruiter'
+      - [ ] role of 'recruiter', 'non-recruiter interviewer'
       - [ ] user info will not be mandatory
-  - Issues [link](https://github.com/fletchulence/myPortfolio/issues)
+  - Issues [link](https://github.com/fletchulence/webpage-back-end/issues)
     - laziness of developer
 ### Frontend:
   - New Idea Scratchpad
