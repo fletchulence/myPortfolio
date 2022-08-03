@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Suspense, useEffect } from 'react';
 
 // image imports
 import anywhere_thumb from '../assets/images/anywhere_dashboard1.webp';
@@ -26,6 +26,7 @@ import {
 //todo: add alt txt for the imgs
 const ProjCardInfo = [
    {
+      project_id: 1,
       proj_name: 'HumanRights First',
       role: 'Backend Developer',
       image: underdog_thumb,
@@ -43,6 +44,7 @@ const ProjCardInfo = [
       likes: 20
    },
    {
+      project_id: 2,
       proj_name: 'Potluck Planner',
       role: 'Project Manager',
       image: potluck_thumb,
@@ -61,6 +63,7 @@ const ProjCardInfo = [
       likes: 33
    },
    {
+      project_id: 3,
       proj_name: 'Nasa Photo of the Day',
       role: 'Creator',
       image: nasa_thumb,
@@ -78,6 +81,7 @@ const ProjCardInfo = [
       likes: 10
    },
    {
+      project_id: 4,
       proj_name: 'African Marketplace',
       role: 'Frontend Developer',
       image: african_mp,
@@ -95,6 +99,7 @@ const ProjCardInfo = [
       likes: 4
    },
    {
+      project_id: 5,
       proj_name: 'Anywhere Fitness',
       role: 'Full Stack Developer',
       image: anywhere_thumb,
@@ -114,6 +119,18 @@ const ProjCardInfo = [
 ]
 
 function Projects() {
+
+   
+   // useEffect(() =>{
+   //    console.log()
+   //    axios.get(`http://localhost:9222/api/projects/${idx}/likes`)
+   //      .then(res =>{
+   //        console.log(res)
+   //        setLikeNum(res.data.likes)
+   //      })
+   //      .catch(err => err.message)
+   //  });
+
    return (
       <Container id='Projects' sx={{
             // display: 'flex',
@@ -126,11 +143,12 @@ function Projects() {
             justifyContent: 'space-around',
             alignSelf: 'center',
          }}>
-            {/* <Suspense fallback= {<>...Loading</>}> */}
+            <Suspense fallback= {<>...Loading</>}>
             {ProjCardInfo.map((el, idx) =>
                <ProjCard
                   key={idx}
-                  likes={el.likes}
+                  // likes={el.likes}
+                  project_id={el.project_id}
                   proj_name={el.proj_name}
                   role={el.role}
                   linkFor={el.linkFor}
@@ -143,7 +161,7 @@ function Projects() {
                </ProjCard>
                
                )}
-               {/* </Suspense> */}
+               </Suspense>
          </Box>
       </Container>
    )

@@ -1,4 +1,5 @@
-import React, { Suspense } from 'react';
+import React, { Suspense, useEffect } from 'react';
+import axios from "axios";
 import { styled } from '@mui/material/styles'; //! might want to consider changing this to styledComponents
 import { 
   Badge,
@@ -35,7 +36,6 @@ const StyledBadge = styled(Badge)({
   "& .MuiBadge-badge": {
     backgroundColor: theme.palette.secondary.light,
     color: "white",
-    // margin: '0px'
   }
 });
 
@@ -43,29 +43,38 @@ const LikedProj = styled((props) => {
   const { like, ...other } = props
   return <IconButton {...other} />;
 })(({ theme, like }) => ({
-  color: !like ? 'gray' : red[400],
+  color: like ? red[400] : 'grey',
   transition: theme.transitions.create('color', {
     // transition: 
   })
 }));
 
+
 export default function ProjectOverviewCard(props) {
+
   let {
-    likes,
     proj_name,
     role,
     linkFor,
     github_link,
     bullets,
-    // bullet2,
-    // bullet3,
     // icon_color, //! unused for the purposes of styling -- might change later
     image
   } = props;
-  const [expanded, setExpanded] = React.useState(false);
-  const [liked, setLiked] = React.useState(false)
-  const [likeNum, setLikeNum] = React.useState(likes);
+  const [ expanded, setExpanded ] = React.useState(false);
+  const [ liked, setLiked ] = React.useState(false)
+  const [ likeNum, setLikeNum ] = React.useState();
+  const [ projectBody, setProjectBody ] = React.useState({})
 
+  useEffect (() => {
+    axios.get(`http://localhost:9222/api/projects/${props.project_id}`)
+      .then(res =>{
+        setLikeNum(res.data.project_likes)
+        setProjectBody(res.data)
+      })
+      .catch(err => err.message)
+    }, []);
+        
   // this will handle the clicks and the
   const handleExpandClick = () => {
     setExpanded(!expanded);
@@ -87,16 +96,63 @@ export default function ProjectOverviewCard(props) {
     } else return alert('Link isnt working, please reach out to me via contact link below')
   }
 
-  const handleLike = () => {
-    let likeNum = likes
-    if (liked === false) {
-      setLiked(!liked);
-      setLikeNum(likeNum + 1)
-    } else {
-      setLiked(!liked);
-      setLikeNum(likes);
+  function handleLikeClick() {
+    if (liked === true) {
+      setLikeNum(likeNum - 1); // changing like number
+      console.log(liked)
+      setLiked(!liked); // here changing colors
+    } else if (liked === false) {
+      console.log(liked)
+      setLikeNum(likeNum + 1);
+      setLiked(true);
+      // console.log('not supposed')
     }
+    console.log(liked)
+    
+    updateLikes(props.project_id, projectBody)
+    console.log('LIKENUM', likeNum)
   }
+
+  
+  function updateLikes(id, project){
+    axios.put(`http://localhost:9222/api/projects/${id}`, project)
+    .then(res =>{
+      console.log(res)
+      // console.log('RESPONSE.data', res.data.project_likes)
+      // setProjectBody(res.body)
+      // res.body = project
+      // console.log('PROJECT ', project)
+      // console.log('PROJECT BODY', projectBody)
+      // return project
+    }) 
+    .catch(err => console.error(err))     
+  }
+
+  // useEffect(()=>{
+  //    updateLikes(props.project_id, {
+  //     project_likes: likeNum,
+  //     // project_content: null
+  //   })
+  // }, [])
+
+
+
+    // useEffect(() => {
+    //   // console.log(likeNum)
+    //   axios.put(`http://localhost:9222/api/projects/${props.project_id}`, project)
+    //   // try {
+
+    //   // } catch(err){
+    //   //   console.error(err.message)
+    //   // }
+    //     .then(res =>{
+    //       // console.log(likeNum)
+    //       res.send({ project_likes: likeNum })
+    //       // return likeNum
+    //     })
+    //     .catch(err => {
+    //     })
+    // })
 
   // abbreviations for the Proj tags
   const abbv = `${proj_name}`.split(' ').map(x => x[0]).join('');
@@ -137,8 +193,8 @@ export default function ProjectOverviewCard(props) {
               aria-checked={liked}
               aria-label='add to favorites'
               like={liked}
-              onClick={handleLike}
-              >
+              onClick={handleLikeClick}
+            >
               <StyledBadge badgeContent={likeNum}>
                 <FavoriteIcon />
               </StyledBadge>
