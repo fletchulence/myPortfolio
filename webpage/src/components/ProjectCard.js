@@ -96,38 +96,47 @@ export default function ProjectOverviewCard(props) {
     } else return alert('Link isnt working, please reach out to me via contact link below')
   }
 
-  const handleLikeClick = () => {
+  function handleLikeClick() {
     if (liked === true) {
-      setLiked(!liked);
-      setLikeNum(likeNum - 1);
-    } else {
-      setLiked(!liked);
+      setLikeNum(likeNum - 1); // changing like number
+      console.log(liked)
+      setLiked(!liked); // here changing colors
+    } else if (liked === false) {
+      console.log(liked)
       setLikeNum(likeNum + 1);
+      setLiked(true);
       // console.log('not supposed')
     }
+    console.log(liked)
     
-    // updateLikes(props.project_id, {
-    //   project_likes: likeNum,
-    //   // project_content: null
-    // })
+    updateLikes(props.project_id, projectBody)
     console.log('LIKENUM', likeNum)
   }
 
-  useEffect(()=>{
-    updateLikes()
-  }, [likeNum])
   
   function updateLikes(id, project){
     axios.put(`http://localhost:9222/api/projects/${id}`, project)
-      .then(res =>{
-        console.log('RESPONSE.data', res.data.project_likes)
-        setProjectBody(res.body)
-        res.body = project
-        console.log('PROJECT ', project)
-        // return project
-      }) 
-      .catch(err => console.error(err))     
+    .then(res =>{
+      console.log(res)
+      // console.log('RESPONSE.data', res.data.project_likes)
+      // setProjectBody(res.body)
+      // res.body = project
+      // console.log('PROJECT ', project)
+      // console.log('PROJECT BODY', projectBody)
+      // return project
+    }) 
+    .catch(err => console.error(err))     
   }
+
+  // useEffect(()=>{
+  //    updateLikes(props.project_id, {
+  //     project_likes: likeNum,
+  //     // project_content: null
+  //   })
+  // }, [])
+
+
+
     // useEffect(() => {
     //   // console.log(likeNum)
     //   axios.put(`http://localhost:9222/api/projects/${props.project_id}`, project)
@@ -184,7 +193,7 @@ export default function ProjectOverviewCard(props) {
               aria-checked={liked}
               aria-label='add to favorites'
               like={liked}
-              onClick={() => handleLikeClick(likeNum)}
+              onClick={handleLikeClick}
             >
               <StyledBadge badgeContent={likeNum}>
                 <FavoriteIcon />
