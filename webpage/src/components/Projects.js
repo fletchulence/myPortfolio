@@ -1,4 +1,5 @@
-import React, { Suspense, useEffect } from 'react';
+import React, { Suspense, useEffect, useState } from 'react';
+import axios from 'axios';
 
 // image imports
 import anywhere_thumb from '../assets/images/anywhere_dashboard1.webp';
@@ -41,7 +42,7 @@ const ProjCardInfo = [
       icon_color: theme.palette.tertiary.text,
       github_link: 'https://github.com/fletchulence/underdog-devs-be-a#endpoints',
       comments_section: '',
-      likes: 20
+      // likes: 20
    },
    {
       project_id: 2,
@@ -60,7 +61,7 @@ const ProjCardInfo = [
       icon_color: '#ef5350',
       github_link: 'https://github.com/Potluck-Planner-A/front-end',
       comments_section: '',
-      likes: 33
+      // likes: 33
    },
    {
       project_id: 3,
@@ -78,7 +79,7 @@ const ProjCardInfo = [
       icon_color: theme.palette.primary.borders,
       github_link: 'https://github.com/fletchulence/nasa-photo-of-the-day',
       comments_section: '',
-      likes: 10
+      // likes: 10
    },
    {
       project_id: 4,
@@ -96,7 +97,7 @@ const ProjCardInfo = [
       icon_color: theme.palette.tertiary.text,
       github_link: 'https://github.com/Build-Week-ft-african-marketplace-1/front-end/tree/main/african-marketplace',
       comments_section: '',
-      likes: 4
+      // likes: 4
    },
    {
       project_id: 5,
@@ -114,29 +115,64 @@ const ProjCardInfo = [
       icon_color: '#ef5350',
       github_link: 'https://github.com/Build-Week-Anywhere-Fitness-6-2021',
       comments_section: '',
-      likes: 25,
+      // likes: 25,
    },
 ]
 
 function Projects() {
+   // let project = []
+
+   const [ projects, setProjects ] = useState([])
+   const [ likes, setLikes ] = useState(0)
 
    
-   // useEffect(() =>{
-   //    console.log()
-   //    axios.get(`http://localhost:9222/api/projects/${idx}/likes`)
-   //      .then(res =>{
-   //        console.log(res)
-   //        setLikeNum(res.data.likes)
-   //      })
-   //      .catch(err => err.message)
-   //  });
+   useEffect (() => {
+      axios.get(`https://water-plants-bw.herokuapp.com/api/projects`)
+      
+      // try{
+      
+      //       }
+            
+      //       console.log(projects)
+      //       // projects = setProjects()
+      //    } catch(err){
+      //       console.error(err)
+      //    }
+      .then(res =>{
+         // reformat(res.data)
+         setProjects(res.data)
+         // setProjects(res.data)
+      })
+      // .then(project =>{
+      //    console.log(project)
+      //    // setLikes(res)
+      // })
+      .catch(err => console.error(err))
+   }, []);
 
+   // function reformat(projects){
+   //    let project = []
+   //    for (let i of projects){
+   //       // console.log(i)
+   //       project.push(i)
+   //    }
+   //    console.log("WHAT WE DOING HERE", project)
+   //    return project 
+   // }
+   
+
+   console.log('LIKES', likes)
+   console.log("PROJECTS", projects)
+
+   // projects.forEach((e) => (
+   //    setLikes(e.project_likes)
+   // ))
+
+   console.log(likes)
+ 
+   
    return (
-      <Container id='Projects' sx={{
-            // display: 'flex',
-            // justifyContent: 'center',
-            // border: theme.palette.primary.main,
-         }}>
+      <Container id='Projects'>
          <Box sx={{
             display: 'flex',
             flexFlow: 'row wrap',
@@ -144,23 +180,50 @@ function Projects() {
             alignSelf: 'center',
          }}>
             <Suspense fallback= {<>...Loading</>}>
-            {ProjCardInfo.map((el, idx) =>
-               <ProjCard
-                  key={idx}
-                  // likes={el.likes}
-                  project_id={el.project_id}
-                  proj_name={el.proj_name}
-                  role={el.role}
-                  linkFor={el.linkFor}
-                  image={el.image}
-                  bullets={el.bullets}
-                  github_link={el.github_link}
-               > 
-                  {el} 
+            {/* { 
+               projects.map((el, idx) => 
+                  // el.project_likes
+                  // setLikes(el.project_likes)
+                     <ProjCard
+                        like={el.project_likes}
+                        project_id={el.project_id}
+                        proj_name={el.project_name}
+                     >
+                        {el}
+                        {console.log('THIS ONE' , el.project_likes)}
+                        {console.log("HERE", likes)}
+                     </ProjCard>
+                  
+                  // return el.project_likes
+            
+     
+                      
+                  
+                  
+                  
+               )
+            } */}
 
-               </ProjCard>
-               
-               )}
+            {
+               projects.map((el, idx) =>
+                  <ProjCard
+                     project
+                     // key={idx}
+                     // like={likes}
+                     like={el.project_likes}
+                     // project_id={idx}
+                     proj_name={el.proj_name}
+                     role={el.role}
+                     linkFor={el.linkFor}
+                     image={el.image}
+                     bullets={el.bullets}
+                     github_link={el.github_link}
+                     > 
+                     {el} 
+                  </ProjCard>
+               )
+            } 
+        
                </Suspense>
          </Box>
       </Container>

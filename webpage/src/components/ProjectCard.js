@@ -53,6 +53,9 @@ const LikedProj = styled((props) => {
 export default function ProjectOverviewCard(props) {
 
   let {
+    key,
+    like,
+    project_id,
     proj_name,
     role,
     linkFor,
@@ -63,26 +66,27 @@ export default function ProjectOverviewCard(props) {
   } = props;
   const [ expanded, setExpanded ] = React.useState(false);
   const [ liked, setLiked ] = React.useState(false)
-  const [ likeNum, setLikeNum ] = React.useState();
-  const [ projectBody, setProjectBody ] = React.useState({})
+  const [ likeNum, setLikeNum ] = React.useState(like);
+  console.log('PROJECT CONING IN HOT', props.project)
+  // const [ projectBody, setProjectBody ] = React.useState({})
 
-  useEffect (() => {
-    axios.get(`http://localhost:9222/api/projects/${props.project_id}`)
-      .then(res =>{
-        setLikeNum(res.data.project_likes)
-        setProjectBody(res.data)
-      })
-      .catch(err => err.message)
-    }, []);
+  // useEffect (() => {
+  //   axios.get(`http://localhost:9222/api/projects/${proj_id}`)
+  //     .then(res =>{
+  //       setLikeNum(res.data.project_likes)
+  //       // setProjectBody(res.data)
+  //     })
+  //     .catch(err => err.message)
+  //   }, []); 
         
   // this will handle the clicks and the
   const handleExpandClick = () => {
     setExpanded(!expanded);
   };
 
-  const handleClose = () => {
-    setExpanded(false)
-  }
+  // const handleClose = () => {
+  //   setExpanded(false)
+  // }
 
   const handleErrorClick = ()=>{
     alert('-- these arent working just yet -- Come back soon for the revamp!')
@@ -95,41 +99,50 @@ export default function ProjectOverviewCard(props) {
       window.open(github_link, '_blank')
     } else return alert('Link isnt working, please reach out to me via contact link below')
   }
+  
+  function updateLikeNum(project){
 
-  function handleLikeClick() {
-    if (liked === true) {
-      setLikeNum(likeNum - 1); // changing like number
-      console.log(liked)
-      setLiked(!liked); // here changing colors
-    } else if (liked === false) {
-      console.log(liked)
-      setLikeNum(likeNum + 1);
-      setLiked(true);
-      // console.log('not supposed')
-    }
-    console.log(liked)
-    
-    updateLikes(props.project_id, projectBody)
-    console.log('LIKENUM', likeNum)
+    console.log('hitting')
+
+    // axios.put(`http://localhost:9222/api/projects/${proj_id}`, project)
+    // try {
+    //   // console.log(project)
+    //   setLikeNum(project)
+    //   // return project + 1
+    // } catch (err){
+    //   console.error(err)
+    // }
+    // // .then(res =>{
+    // //   // console.log(res.body)
+    // //   // console.log('RESPONSE.data', res.data.project_likes)
+    // //   // setProjectBody(res.data)
+    // //   console.log(project)
+    // //   // res.body = project
+    // //   // console.log('PROJECT ', project)
+    // //   // console.log('PROJECT BODY', projectBody)
+    // //   // return project
+    // // }) 
+    // // .catch(err => console.error(err))     
   }
 
-  
-  function updateLikes(id, project){
-    axios.put(`http://localhost:9222/api/projects/${id}`, project)
-    .then(res =>{
-      console.log(res)
-      // console.log('RESPONSE.data', res.data.project_likes)
-      // setProjectBody(res.body)
-      // res.body = project
-      // console.log('PROJECT ', project)
-      // console.log('PROJECT BODY', projectBody)
-      // return project
-    }) 
-    .catch(err => console.error(err))     
+  const handleLikeClick = () => {
+    if (liked === false) {
+      // console.log(likeNum)
+      setLikeNum(likeNum + 1); // changing like number
+      // console.log(likeNum)
+      setLiked(!liked); // here changing colors
+    } else {
+      setLiked(!liked);
+      setLikeNum(likeNum);
+      // console.log('not supposed')
+    }
+    
+    // updateLikeNum({ project_likes: likeNum })
+    // console.log('LIKENUM', likeNum)
   }
 
   // useEffect(()=>{
-  //    updateLikes(props.project_id, {
+  //    updateLikeNum(props.project_id, {
   //     project_likes: likeNum,
   //     // project_content: null
   //   })
@@ -137,22 +150,25 @@ export default function ProjectOverviewCard(props) {
 
 
 
-    // useEffect(() => {
-    //   // console.log(likeNum)
-    //   axios.put(`http://localhost:9222/api/projects/${props.project_id}`, project)
-    //   // try {
+  // function updateLike(){
+  //   axios.put(`http://localhost:9222/api/projects/${project_id}`, project)
+  //   // try {
 
-    //   // } catch(err){
-    //   //   console.error(err.message)
-    //   // }
-    //     .then(res =>{
-    //       // console.log(likeNum)
-    //       res.send({ project_likes: likeNum })
-    //       // return likeNum
-    //     })
-    //     .catch(err => {
-    //     })
-    // })
+  //   // } catch(err){
+  //   //   console.error(err.message)
+  //   // }
+  //     .then(res =>{
+  //       // console.log(likeNum)
+  //       res.send({ project_likes: likeNum })
+  //       // return likeNum
+  //     })
+  //     .catch(err => {
+  //     })
+  // }
+
+    useEffect(() => {
+      updateLikeNum({project_likes: likeNum})
+    }, [likeNum])
 
   // abbreviations for the Proj tags
   const abbv = `${proj_name}`.split(' ').map(x => x[0]).join('');
