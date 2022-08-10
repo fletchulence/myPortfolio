@@ -124,16 +124,6 @@ function Projects(props) {
    
    useEffect (() => {
       axios.get(`http://localhost:9222/api/projects`)
-      
-      // try{
-      
-      //       }
-            
-      //       console.log(projects)
-      //       // projects = setProjects()
-      //    } catch(err){
-      //       console.error(err)
-      //    }
       .then(res =>{
          // reformat(res.data)
          setProjects(projects => ({...projects,
@@ -183,22 +173,22 @@ function Projects(props) {
          }}>
 
             {/* <Suspense fallback= {<>...Loading</>}> */}
-            {projects.forEach((el, idx) =>
+            {/* {projects.map((el, idx) => */}
                <ProjectOverviewCard
-                  key={idx}
-                  likes={el.likes}
-                  proj_name={el.proj_name}
-                  role={el.role}
-                  linkFor={el.linkFor}
-                  image={el.image}
-                  bullets={el.bullets}
-                  github_link={el.github_link}
+                  // key={}
+                  likes={projects.likes}
+                  proj_name={projects.proj_name}
+                  role={projects.role}
+                  linkFor={projects.linkFor}
+                  image={projects.image}
+                  bullets={projects.bullets}
+                  github_link={projects.github_link}
                /> 
-                  // {/* {el.proj_name}  */}
+                  {/* // {el.proj_name}  */}
 
-               // </ProjCard>
+               {/* // </ProjCard> */}
                
-               )}
+               {/* )} */}
                {/* </Suspense> */}
          </Box>
       </Container>
