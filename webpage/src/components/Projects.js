@@ -1,5 +1,6 @@
-import React, { Suspense, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+
 
 // image imports
 import anywhere_thumb from '../assets/images/anywhere_dashboard1.webp';
@@ -11,7 +12,7 @@ import underdog_thumb from '../assets/images/underdog_devs.webp';
 // importing theme -- when can i stop doing this??
 import theme from './../assets/styles/themes'
 
-import ProjCard from './ProjectCard'
+import ProjectOverviewCard from './ProjectCard'
 
 // MUI IMPORTS:
 import { 
@@ -27,7 +28,6 @@ import {
 //todo: add alt txt for the imgs
 const ProjCardInfo = [
    {
-      project_id: 1,
       proj_name: 'HumanRights First',
       role: 'Backend Developer',
       image: underdog_thumb,
@@ -45,7 +45,6 @@ const ProjCardInfo = [
       // likes: 20
    },
    {
-      project_id: 2,
       proj_name: 'Potluck Planner',
       role: 'Project Manager',
       image: potluck_thumb,
@@ -64,7 +63,6 @@ const ProjCardInfo = [
       // likes: 33
    },
    {
-      project_id: 3,
       proj_name: 'Nasa Photo of the Day',
       role: 'Creator',
       image: nasa_thumb,
@@ -82,7 +80,6 @@ const ProjCardInfo = [
       // likes: 10
    },
    {
-      project_id: 4,
       proj_name: 'African Marketplace',
       role: 'Frontend Developer',
       image: african_mp,
@@ -100,7 +97,6 @@ const ProjCardInfo = [
       // likes: 4
    },
    {
-      project_id: 5,
       proj_name: 'Anywhere Fitness',
       role: 'Full Stack Developer',
       image: anywhere_thumb,
@@ -119,15 +115,15 @@ const ProjCardInfo = [
    },
 ]
 
-function Projects() {
+function Projects(props) {
    // let project = []
 
-   const [ projects, setProjects ] = useState([])
-   const [ likes, setLikes ] = useState(0)
+   const [ projects, setProjects ] = useState({})
+   const [ likes, setLikes ] = useState([])
 
    
    useEffect (() => {
-      axios.get(`https://water-plants-bw.herokuapp.com/api/projects`)
+      axios.get(`http://localhost:9222/api/projects`)
       
       // try{
       
@@ -140,7 +136,14 @@ function Projects() {
       //    }
       .then(res =>{
          // reformat(res.data)
-         setProjects(res.data)
+         setProjects(projects => ({...projects,
+           
+               likes: res.data.map(e => e.project_likes),
+               icon_color: ProjCardInfo.map(e => e.icon_color)
+            
+            
+         }))
+         // setLikes(res.data.map(e => e.project_likes))
          // setProjects(res.data)
       })
       // .then(project =>{
@@ -161,16 +164,15 @@ function Projects() {
    // }
    
 
-   console.log('LIKES', likes)
-   console.log("PROJECTS", projects)
 
    // projects.forEach((e) => (
    //    setLikes(e.project_likes)
    // ))
 
-   console.log(likes)
+   console.log('should be here', likes)
+   console.log('should Projects', projects)
  
-   
+
    return (
       <Container id='Projects'>
          <Box sx={{
@@ -179,52 +181,25 @@ function Projects() {
             justifyContent: 'space-around',
             alignSelf: 'center',
          }}>
-            <Suspense fallback= {<>...Loading</>}>
-            {/* { 
-               projects.map((el, idx) => 
-                  // el.project_likes
-                  // setLikes(el.project_likes)
-                     <ProjCard
-                        like={el.project_likes}
-                        project_id={el.project_id}
-                        proj_name={el.project_name}
-                     >
-                        {el}
-                        {console.log('THIS ONE' , el.project_likes)}
-                        {console.log("HERE", likes)}
-                     </ProjCard>
-                  
-                  // return el.project_likes
-            
-     
-                      
-                  
-                  
-                  
-               )
-            } */}
 
-            {
-               projects.map((el, idx) =>
-                  <ProjCard
-                     project
-                     // key={idx}
-                     // like={likes}
-                     like={el.project_likes}
-                     // project_id={idx}
-                     proj_name={el.proj_name}
-                     role={el.role}
-                     linkFor={el.linkFor}
-                     image={el.image}
-                     bullets={el.bullets}
-                     github_link={el.github_link}
-                     > 
-                     {el} 
-                  </ProjCard>
-               )
-            } 
-        
-               </Suspense>
+            {/* <Suspense fallback= {<>...Loading</>}> */}
+            {projects.forEach((el, idx) =>
+               <ProjectOverviewCard
+                  key={idx}
+                  likes={el.likes}
+                  proj_name={el.proj_name}
+                  role={el.role}
+                  linkFor={el.linkFor}
+                  image={el.image}
+                  bullets={el.bullets}
+                  github_link={el.github_link}
+               /> 
+                  // {/* {el.proj_name}  */}
+
+               // </ProjCard>
+               
+               )}
+               {/* </Suspense> */}
          </Box>
       </Container>
    )

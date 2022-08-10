@@ -1,5 +1,4 @@
-import React, { Suspense, useEffect } from 'react';
-import axios from "axios";
+import React, { Suspense } from 'react';
 import { styled } from '@mui/material/styles'; //! might want to consider changing this to styledComponents
 import { 
   Badge,
@@ -36,6 +35,7 @@ const StyledBadge = styled(Badge)({
   "& .MuiBadge-badge": {
     backgroundColor: theme.palette.secondary.light,
     color: "white",
+    // margin: '0px'
   }
 });
 
@@ -43,42 +43,31 @@ const LikedProj = styled((props) => {
   const { like, ...other } = props
   return <IconButton {...other} />;
 })(({ theme, like }) => ({
-  color: like ? red[400] : 'grey',
+  color: !like ? 'gray' : red[400],
   transition: theme.transitions.create('color', {
     // transition: 
   })
 }));
 
-
 export default function ProjectOverviewCard(props) {
-
   let {
-    key,
-    like,
-    project_id,
+    likes,
     proj_name,
     role,
     linkFor,
     github_link,
     bullets,
+    // bullet2,
+    // bullet3,
     // icon_color, //! unused for the purposes of styling -- might change later
     image
   } = props;
-  const [ expanded, setExpanded ] = React.useState(false);
-  const [ liked, setLiked ] = React.useState(false)
-  const [ likeNum, setLikeNum ] = React.useState(like);
-  console.log('PROJECT CONING IN HOT', props.project)
-  // const [ projectBody, setProjectBody ] = React.useState({})
 
-  // useEffect (() => {
-  //   axios.get(`http://localhost:9222/api/projects/${proj_id}`)
-  //     .then(res =>{
-  //       setLikeNum(res.data.project_likes)
-  //       // setProjectBody(res.data)
-  //     })
-  //     .catch(err => err.message)
-  //   }, []); 
-        
+  const [expanded, setExpanded] = React.useState(false);
+  const [liked, setLiked] = React.useState(false)
+  const [likeNum, setLikeNum] = React.useState(likes);
+
+  console.log(likes)
   // this will handle the clicks and the
   const handleExpandClick = () => {
     setExpanded(!expanded);
@@ -125,57 +114,24 @@ export default function ProjectOverviewCard(props) {
     // // .catch(err => console.error(err))     
   }
 
-  const handleLikeClick = () => {
+
+  const handleLike = () => {
+    // let likeNum = likes
     if (liked === false) {
-      // console.log(likeNum)
-      setLikeNum(likeNum + 1); // changing like number
-      // console.log(likeNum)
-      setLiked(!liked); // here changing colors
+      setLiked(!liked);
+      setLikeNum(likes + 1)
     } else {
       setLiked(!liked);
-      setLikeNum(likeNum);
-      // console.log('not supposed')
+      setLikeNum(likes);
     }
-    
-    // updateLikeNum({ project_likes: likeNum })
-    // console.log('LIKENUM', likeNum)
   }
-
-  // useEffect(()=>{
-  //    updateLikeNum(props.project_id, {
-  //     project_likes: likeNum,
-  //     // project_content: null
-  //   })
-  // }, [])
-
-
-
-  // function updateLike(){
-  //   axios.put(`http://localhost:9222/api/projects/${project_id}`, project)
-  //   // try {
-
-  //   // } catch(err){
-  //   //   console.error(err.message)
-  //   // }
-  //     .then(res =>{
-  //       // console.log(likeNum)
-  //       res.send({ project_likes: likeNum })
-  //       // return likeNum
-  //     })
-  //     .catch(err => {
-  //     })
-  // }
-
-    useEffect(() => {
-      updateLikeNum({project_likes: likeNum})
-    }, [likeNum])
 
   // abbreviations for the Proj tags
   const abbv = `${proj_name}`.split(' ').map(x => x[0]).join('');
 
   return (
     <>
-      <Suspense fallback={<div>Loading...</div>}>
+      {/* <Suspense fallback={<div>Loading...</div>}> */}
         <Card
           sx={{
             minWidth: 345,
@@ -209,8 +165,9 @@ export default function ProjectOverviewCard(props) {
               aria-checked={liked}
               aria-label='add to favorites'
               like={liked}
-              onClick={handleLikeClick}
-            >
+
+              onClick={handleLike}
+              >
               <StyledBadge badgeContent={likeNum}>
                 <FavoriteIcon />
               </StyledBadge>
@@ -245,7 +202,7 @@ export default function ProjectOverviewCard(props) {
             </CardContent>
           </Collapse>
         </Card>
-      </Suspense>
+      {/* </Suspense> */}
     </>
   );
 }
