@@ -1,4 +1,6 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
+
 
 // image imports
 import anywhere_thumb from '../assets/images/anywhere_dashboard1.webp';
@@ -10,7 +12,7 @@ import underdog_thumb from '../assets/images/underdog_devs.webp';
 // importing theme -- when can i stop doing this??
 import theme from './../assets/styles/themes'
 
-import ProjCard from './ProjectCard'
+import ProjectOverviewCard from './ProjectCard'
 
 // MUI IMPORTS:
 import { 
@@ -40,7 +42,7 @@ const ProjCardInfo = [
       icon_color: theme.palette.tertiary.text,
       github_link: 'https://github.com/fletchulence/underdog-devs-be-a#endpoints',
       comments_section: '',
-      likes: 20
+      // likes: 20
    },
    {
       proj_name: 'Potluck Planner',
@@ -58,7 +60,7 @@ const ProjCardInfo = [
       icon_color: '#ef5350',
       github_link: 'https://github.com/Potluck-Planner-A/front-end',
       comments_section: '',
-      likes: 33
+      // likes: 33
    },
    {
       proj_name: 'Nasa Photo of the Day',
@@ -75,7 +77,7 @@ const ProjCardInfo = [
       icon_color: theme.palette.primary.borders,
       github_link: 'https://github.com/fletchulence/nasa-photo-of-the-day',
       comments_section: '',
-      likes: 10
+      // likes: 10
    },
    {
       proj_name: 'African Marketplace',
@@ -92,7 +94,7 @@ const ProjCardInfo = [
       icon_color: theme.palette.tertiary.text,
       github_link: 'https://github.com/Build-Week-ft-african-marketplace-1/front-end/tree/main/african-marketplace',
       comments_section: '',
-      likes: 4
+      // likes: 4
    },
    {
       proj_name: 'Anywhere Fitness',
@@ -109,40 +111,84 @@ const ProjCardInfo = [
       icon_color: '#ef5350',
       github_link: 'https://github.com/Build-Week-Anywhere-Fitness-6-2021',
       comments_section: '',
-      likes: 25,
+      // likes: 25,
    },
 ]
 
-function Projects() {
+function Projects(props) {
+   // let project = []
+
+   const [ projects, setProjects ] = useState({})
+   const [ likes, setLikes ] = useState([])
+
+   
+   useEffect (() => {
+      axios.get(`http://localhost:9222/api/projects`)
+      .then(res =>{
+         // reformat(res.data)
+         setProjects(projects => ({...projects,
+           
+               likes: res.data.map(e => e.project_likes),
+               icon_color: ProjCardInfo.map(e => e.icon_color)
+            
+            
+         }))
+         // setLikes(res.data.map(e => e.project_likes))
+         // setProjects(res.data)
+      })
+      // .then(project =>{
+      //    console.log(project)
+      //    // setLikes(res)
+      // })
+      .catch(err => console.error(err))
+   }, []);
+
+   // function reformat(projects){
+   //    let project = []
+   //    for (let i of projects){
+   //       // console.log(i)
+   //       project.push(i)
+   //    }
+   //    console.log("WHAT WE DOING HERE", project)
+   //    return project 
+   // }
+   
+
+
+   // projects.forEach((e) => (
+   //    setLikes(e.project_likes)
+   // ))
+
+   console.log('should be here', likes)
+   console.log('should Projects', projects)
+ 
+
    return (
-      <Container id='Projects' sx={{
-            // display: 'flex',
-            // justifyContent: 'center',
-            // border: theme.palette.primary.main,
-         }}>
+      <Container id='Projects'>
          <Box sx={{
             display: 'flex',
             flexFlow: 'row wrap',
             justifyContent: 'space-around',
             alignSelf: 'center',
          }}>
-            {/* <Suspense fallback= {<>...Loading</>}> */}
-            {ProjCardInfo.map((el, idx) =>
-               <ProjCard
-                  key={idx}
-                  likes={el.likes}
-                  proj_name={el.proj_name}
-                  role={el.role}
-                  linkFor={el.linkFor}
-                  image={el.image}
-                  bullets={el.bullets}
-                  github_link={el.github_link}
-               > 
-                  {el} 
 
-               </ProjCard>
+            {/* <Suspense fallback= {<>...Loading</>}> */}
+            {/* {projects.map((el, idx) => */}
+               <ProjectOverviewCard
+                  // key={}
+                  likes={projects.likes}
+                  proj_name={projects.proj_name}
+                  role={projects.role}
+                  linkFor={projects.linkFor}
+                  image={projects.image}
+                  bullets={projects.bullets}
+                  github_link={projects.github_link}
+               /> 
+                  {/* // {el.proj_name}  */}
+
+               {/* // </ProjCard> */}
                
-               )}
+               {/* )} */}
                {/* </Suspense> */}
          </Box>
       </Container>

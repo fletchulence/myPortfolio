@@ -62,18 +62,20 @@ export default function ProjectOverviewCard(props) {
     // icon_color, //! unused for the purposes of styling -- might change later
     image
   } = props;
+
   const [expanded, setExpanded] = React.useState(false);
   const [liked, setLiked] = React.useState(false)
   const [likeNum, setLikeNum] = React.useState(likes);
 
+  console.log(likes)
   // this will handle the clicks and the
   const handleExpandClick = () => {
     setExpanded(!expanded);
   };
 
-  const handleClose = () => {
-    setExpanded(false)
-  }
+  // const handleClose = () => {
+  //   setExpanded(false)
+  // }
 
   const handleErrorClick = ()=>{
     alert('-- these arent working just yet -- Come back soon for the revamp!')
@@ -86,12 +88,38 @@ export default function ProjectOverviewCard(props) {
       window.open(github_link, '_blank')
     } else return alert('Link isnt working, please reach out to me via contact link below')
   }
+  
+  function updateLikeNum(project){
+
+    console.log('hitting')
+
+    // axios.put(`http://localhost:9222/api/projects/${proj_id}`, project)
+    // try {
+    //   // console.log(project)
+    //   setLikeNum(project)
+    //   // return project + 1
+    // } catch (err){
+    //   console.error(err)
+    // }
+    // // .then(res =>{
+    // //   // console.log(res.body)
+    // //   // console.log('RESPONSE.data', res.data.project_likes)
+    // //   // setProjectBody(res.data)
+    // //   console.log(project)
+    // //   // res.body = project
+    // //   // console.log('PROJECT ', project)
+    // //   // console.log('PROJECT BODY', projectBody)
+    // //   // return project
+    // // }) 
+    // // .catch(err => console.error(err))     
+  }
+
 
   const handleLike = () => {
-    let likeNum = likes
+    // let likeNum = likes
     if (liked === false) {
       setLiked(!liked);
-      setLikeNum(likeNum + 1)
+      setLikeNum(likes + 1)
     } else {
       setLiked(!liked);
       setLikeNum(likes);
@@ -103,7 +131,7 @@ export default function ProjectOverviewCard(props) {
 
   return (
     <>
-      <Suspense fallback={<div>Loading...</div>}>
+      {/* <Suspense fallback={<div>Loading...</div>}> */}
         <Card
           sx={{
             minWidth: 345,
@@ -137,6 +165,7 @@ export default function ProjectOverviewCard(props) {
               aria-checked={liked}
               aria-label='add to favorites'
               like={liked}
+
               onClick={handleLike}
               >
               <StyledBadge badgeContent={likeNum}>
@@ -173,7 +202,7 @@ export default function ProjectOverviewCard(props) {
             </CardContent>
           </Collapse>
         </Card>
-      </Suspense>
+      {/* </Suspense> */}
     </>
   );
 }
